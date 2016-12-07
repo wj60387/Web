@@ -1,0 +1,84 @@
+﻿.toplog
+{
+    width:100%;
+    height:107px;
+    background-color:rgb(241,241,241);
+}
+.login li{
+     
+} 
+ 
+.login ul li a {
+    float: right;
+    display: block; /*这个比较关键*/
+    border-radius: 3px 4px;
+    text-decoration: none; /*去掉下划线*/
+    background: rgb(229,138,0); /*设置元素的背景为红色*/
+    color: #FFF; /*文字颜色是白色*/
+    font-size: 8px; /*用12号字*/
+    width: 60px; /*设置元素宽为80px*/
+    text-align: center; /*让文本居中*/
+    margin: 10px 2px ;
+    
+}
+.box1{
+    width:852px;
+    height:30px;
+    text-align:right;
+    /*background:red;*/
+     margin:0 auto;
+}
+.box2{
+    width:852px;
+    height:30px;
+    margin:0 auto;
+}
+
+.leftfolat
+{
+    float:left;
+}
+.navbar {
+    overflow:hidden;
+     width:100%;
+     background:rgb(45,179,84);
+}
+.navbar div {
+    position:relative;
+    left:50%;
+    float:left;
+}
+.navbar ul {
+    position:relative;
+    left:-50%;
+    float:left;
+}
+.navbar li {
+    float:left;
+   
+}
+ 
+.navbar ul li a{
+width:142px;/*设置元素宽为80px*/
+height:50px;/*设置高度为28px*/
+line-height:50px;/*设置行距为28px，让文字在每行的中间位置*/
+background:rgb(45,179,84);/*设置元素的背景为红色*/
+color:#FFF;/*文字颜色是白色*/
+margin:0px 0px;
+padding:0 1px 0 0;
+font-size:14px;/*用12号字*/
+display:block;/*这个比较关键，因为a本身就是联级元素，本身不具有宽高，用这个把它变成块级元素，这样前面设置的宽和高就能起作用了*/
+text-align:center;/*让文本居中*/
+text-decoration:none; /*去掉下划线*/
+}
+.navbar ul li a:hover{ /*这个大概的意思就是当鼠标放到这个a元素的上面时，这个a元素的样式就按下面的代码执行*/
+width:140px;
+height:48px;
+line-height:50px;
+border:1px solid rgb(54,202,97);
+color: #FFF;
+background: rgb(54,202,97);
+}
+
+  
+ 
