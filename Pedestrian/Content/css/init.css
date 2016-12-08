@@ -14,3 +14,15 @@ html {overflow-y: scroll;}
 
 .clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
 .clearfix { *zoom:1; }
+
+.tourWebWith {
+     /*border:1px solid #ff0000;*/
+     margin:20px auto;
+     width:852px;
+     height:420px;
+}
+.tourleftFloat
+{
+    margin:5px;
+    float:left;
+}
