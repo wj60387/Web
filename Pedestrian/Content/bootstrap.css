@@ -234,6 +234,7 @@ table {
   a,
   a:visited {
     text-decoration: underline;
+    
   }
   a[href]:after {
     content: " (" attr(href) ")";
@@ -3932,7 +3933,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #428bca;
+  background-color: rgb(54,202,97);
 }
 
 .nav-stacked > li {

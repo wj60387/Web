@@ -176,7 +176,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\init.css" />
-    <Content Include="Content\css\layout.css" />
     <Content Include="Content\images\1.png" />
     <Content Include="Content\images\2.png" />
     <Content Include="Content\images\3.png" />
@@ -184,6 +183,7 @@
     <Content Include="Content\images\5.png" />
     <Content Include="Content\images\6.png" />
     <Content Include="Content\images\7.jpg" />
+    <Content Include="Content\images\logo2.png" />
     <Content Include="Content\images\_logo.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="favicon.ico" />
