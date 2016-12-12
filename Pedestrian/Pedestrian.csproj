@@ -172,20 +172,34 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\index.css" />
     <Content Include="Content\css\init.css" />
     <Content Include="Content\images\1.png" />
     <Content Include="Content\images\2.png" />
     <Content Include="Content\images\3.png" />
     <Content Include="Content\images\4.png" />
     <Content Include="Content\images\5.png" />
-    <Content Include="Content\images\6.png" />
-    <Content Include="Content\images\7.jpg" />
     <Content Include="Content\images\logo2.png" />
+    <Content Include="Content\images\shimengren_app.png" />
     <Content Include="Content\images\_logo.png" />
-    <Content Include="Content\images\logo.png" />
+    <Content Include="js\common.js" />
+    <Content Include="js\footer.js" />
+    <Content Include="js\header.js" />
+    <Content Include="js\jquery.cookie.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\plugins\jquery.json.js" />
+    <Content Include="js\redirect\mobileRedirect.js" />
+    <Content Include="js\sochange\jquery.soChange.js" />
+    <Content Include="js\unslider\style.css" />
+    <Content Include="js\unslider\unslider.min.js" />
+    <Content Include="themes\bootstrap\css\bootstrap_bak.css" />
+    <Content Include="themes\bootstrap\css\customnav.css" />
+    <Content Include="themes\bootstrap\js\bootstrap-dropdown.js" />
+    <Content Include="themes\bootstrap\js\bootstrap-modal.js" />
+    <Content Include="themes\bootstrap\js\bootstrap-popover.js" />
+    <Content Include="themes\bootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="themes\itravelfont\act_css.css" />
+    <Content Include="themes\itravelfont\common.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -205,6 +219,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="themes\logo.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -234,6 +249,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\attached\act_topic\" />
+    <Folder Include="Content\images\attached\default\" />
+    <Folder Include="Content\images\attached\image\" />
+    <Folder Include="Content\images\attached\topic\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
