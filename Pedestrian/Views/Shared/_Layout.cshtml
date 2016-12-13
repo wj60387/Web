@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>拾梦人 - 在路上，遇见另一个自己！</title>
+    <title>10.1.43.56 山友集中营</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta content="拾梦人，拾梦人旅行网 -- 最权威的户外旅游目的地的攻略提供者。为广大驴友、旅行者，提供完善、精美的户外旅行攻略手册。旅途中与您为伴是我们的的追求，精彩旅途从拾梦人旅行网开始。" name="description">
     <meta content="拾梦人，拾梦人旅行网，户外旅游，户外目的地，户外目的地游记，户外目的地攻略，户外目的地景点" name="keywords">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    @*<meta content="width=device-width, initial-scale=1.0" name="viewport">*@
     <link rel="shortcut icon" type="image/x-icon" href="/themes/logo.png" media="screen" />
     <link rel="stylesheet" href="/themes/itravelfont/act_css.css" type="text/css" />
     <style type="text/css">
@@ -29,15 +29,12 @@
             position: fixed;
             width: 170px;
             height: 230px;
-            left: 1160px;
+            left: 10px;
             bottom: 115px;
-            background-image: url('Content/images/attached/wx.jpg');
+            background-image: url('/Content/images/attached/wx.jpg');
         }
     </style>
     <script type="text/javascript" src="/js/redirect/mobileRedirect.js"></script>
-
-</head>
-<body class="fontYaHei">
     <script type="text/javascript">
         var globalUser;
         var imagePath = 'Content/images';
@@ -53,273 +50,262 @@
     <script type="text/javascript" src="/js/sochange/jquery.soChange.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
     <script src="/js/unslider/unslider.min.js"></script>
-    <div id="wx-feedback"></div>
-    <div style="background-color: #f7f7f7;">
-        <div class="container">
-            <div class="row-fluid">
-                <div id="signin" class="login-block fontYaHei font12" style="color: #147850;width: 380px;">
-                    <ul>
-                        <li class="lb-item lb-connect" style="list-style: none;text-align: center;">
-                            <a class="btn-login" title="登录拾梦人" href="/login.jsp" rel="nofollow">登录</a>
-                            <a class="btn-reg" href="/register.jsp" title="注册帐号" rel="nofollow">注册</a>
-                            <a class="lb-qq" href="#" title="QQ登录" rel="nofollow" id="qqLoginLink">QQ登录</a>
-                            <a class="lb-rss" title="RSS订阅" href="/article/rss.jhtml" rel="nofollow">订阅</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="userInfo" class="login-block fontYaHei font12" style="color: #147850;width: 450px;display: none;">
-                    <ul class="nav nav-pills" style="margin-bottom:0;float: right;margin-left: 3px;">
-                        <li>
-                            <a href="javascript:void(0);" title="" id="userPicName">
-                                <img id="userPic"   title="" alt="" src="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" id="userScore" title="创建游记、发布相册、组织活动、邀请朋友加入都可以获取金币，金币还可
-以兑换小礼品哦！">我的金币：<span id="overage_score" style="color: #136796;"></span></a>
-                        </li>
-                        <li class="dropdown" id="menutest1">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#menutest1">
-                                <span id="user_name"></span>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li id="clubManage" style="display: none;">
-                                    <a href="/mclub/index.chtml">
-                                        <i class="icon-home" style="margin-right: 5px;"></i>俱乐部管理
-                                    </a>
-                                </li>
-                                <li id="clubManageLine" class="divider" style="margin: 5px 1px;display: none;"></li>
-                                <li>
-                                    <a href="/personal/space/index/index.dhtml">
-                                        <i class="icon-home" style="margin-right: 5px;"></i>个人主页
-                                    </a>
-                                </li>
-                                <li><a href="#" id="userGuide"><i class="icon-edit" style="margin-right: 5px;"></i>旅行游记</a></li>
-                                <li><a href="#" id="userPicGroup"><i class="icon-picture" style="margin-right: 5px;"></i>旅行相册</a></li>
-                                <li><a href="#" id="userActivity"><i class="icon-home" style="margin-right: 5px;"></i>我的活动</a></li>
-                                <li>
-                                    <a href="/presentfront/exchange-1.dhtml" id="userExhange">
-                                        <i class="icon-heart" style="margin-right:
-5px;"></i>礼品兑换
-                                    </a>
-                                </li>
-                                <li class="divider" style="margin: 5px 1px;"></li>
-                                <li><a href="/auth/editUserEntry.dhtml"><i class="icon-cog" style="margin-right: 5px;"></i>个人设置</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/personal/guide/createArticle.dhtml" title="创建游记"><i class="icon-edit"></i></a>
-                        </li>
-                        <li>
-                            <a href="/auth/logout.dhtml" title="注销登录"><i class=" icon-off"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span7" style="left: 0px;height: 75px;bottom: 0px;padding-top: 5px;">
-                    <a href="/" class="span8 logoA" style="margin-left: 0px;margin-bottom: 0px;">
-                        <img alt="" src="/Content/images/_logo.png" id="LogoImg" style="margin-bottom: 0px;">
-                    </a>
-                    <div class="span1">
-                        <div class="bar-side fl" style="padding: 0px 10px;margin-left: 10px;margin-top: 15px;border-left: 1px solid #eee;border-left:
-1px solid #ccc;height: 40px;">
-                            <i class="i-icon-location i-icon-common-top png">&nbsp;</i>
-                        </div>
+</head>
+<body class="fontYaHei">
+        <div id="wx-feedback"></div>
+        <div style="background-color: #f7f7f7;">
+            <div class="container">
+                <div class="row-fluid">
+                    <div id="signin" class="login-block fontYaHei font12" style="color: #147850;width: 380px;">
+                        <ul>
+                            <li class="lb-item lb-connect" style="list-style: none;text-align: center;">
+                                <a class="btn-login" title="登录拾梦人" href="/login.jsp" rel="nofollow">登录</a>
+                                <a class="btn-reg" href="/register.jsp" title="注册帐号" rel="nofollow">注册</a>
+                                <a class="lb-qq" href="#" title="QQ登录" rel="nofollow" id="qqLoginLink">QQ登录</a>
+                                <a class="lb-rss" title="RSS订阅" href="/article/rss.jhtml" rel="nofollow">订阅</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="span3 local-label dropdown" id="changeCityArea" style="margin-top: 15px;margin-left: 0px;">
-                        <h5 class="dropdown-toggle city" data-toggle="dropdown" href="#">
-                            <p id="cityName" style="color: #f90;">选择地市</p>
-                        </h5>
-                        <h6 data-toggle="dropdown" style="cursor: pointer;padding: 0 10px;margin: 0 0 0 -1px;color: #999;font: inherit;font-size:
-12px;">
-                            [切换]
-                        </h6>
-                        <div id="db-nav-location-list" class="dropdown-menu nav-local-list" style=" top: 45px; left: 0px;font-size: 14px;"
-                             role="menu" aria-labelledby="dLabel">
-                            <h5>珠三角地区</h5>
-                            <ul>
-                                <li><a href="#" onclick="javascript:changeCity('401','广州');">广州</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('402','深圳');">深圳</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('405','佛山');">佛山</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('404','东莞');">东莞</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('420','珠海');">珠海</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('422','中山');">中山</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('425','台山');">台山</a></li>
-                            </ul>
-                            <h5>西南/北地区</h5>
-                            <ul>
-                                <li><a href="#" onclick="javascript:changeCity('901','成都');">成都</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('3301','重庆');">重庆</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('1202','丽江');">丽江</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('1203','昆明');">昆明</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('1701','西安');">西安</a></li>
-                            </ul>
-                            <h5>华中地区</h5>
-                            <ul>
-                                <li><a href="#" onclick="javascript:changeCity('2201','武汉');">武汉</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('601','长沙');">长沙</a></li>
-                                <li><a href="#" onclick="javascript:changeCity('701','南昌');">南昌</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="span5">
-                    <form class="form-search" style="padding-top: 20px;float: right;background-color: #f7f7f7;padding-bottom:
-0px;border: 0px solid #e3e3e3;margin-bottom: 0px;"
-                          method="post" action="/article/yj/search.jhtml" id="search">
-                        <input type="text" class="input-large" id="keyword" placeholder="搜索游记攻略" name="keyword"
-                               value=''>
-                        <button type="submit" class="btn">搜索</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="navbar " style="position:relative;z-index:1;">
-        <div class="navbar-inner">
-            <div class="container" style="width: 950px;">
-                <ul class="nav">
-                    <li id="navHome">
-                        <a href="/index.jhtml">首页</a>
-                    </li>
-                    <li id="navActivity">
-                        <a href="/activity/operation/index.jhtml">活动</a>
-                    </li>
-                    <li id="tjActivity">
-                        <a href="/activity/operation/boutiqueIndex.jhtml">
-                            双11特卖
-                            <i class="ask_new_ico"></i>
-                        </a>
-                    </li>
-                    <li id="customtrip">
-                        <a href="/customtrip/index.jhtml">
-                            定制旅行
-                        </a>
-                    </li>
-                    <li id="navArticle" class="dropdown">
-                        <a href="javascript:void(0);" style="cursor:pointer;">
-                            发现
-                            <i class=" icon-chevron-down icon-white" style="margin-left: 10px;margin-top: 2px;"></i>
-                        </a>
-                        <ul class="dropdown-menu cdropdown-menu">
-                            <li style="border-bottom: 1px solid #e0e0e0;"><a href="/article/yj/search.jhtml">游记分享</a></li>
-                            <li style="border-bottom: 1px solid #e0e0e0;"><a href="/mdd/index.jhtml">目的地</a></li>
-                            <li style="border-bottom: 1px solid #e0e0e0;"><a href="/picindex.jhtml">旅途美景</a></li>
-                            <li style="border-bottom: 1px solid #e0e0e0;"><a href="/activity/operation/freeIndex.jhtml">自由结伴</a></li>
-                            <li style="border-bottom: 1px solid #e0e0e0;">
-                                <a href="/group/group/ntindex.jhtml">
-                                    话题小组
+                    <div id="userInfo" class="login-block fontYaHei font12" style="color: #147850;width: 450px;display: none;">
+                        <ul class="nav nav-pills" style="margin-bottom:0;float: right;margin-left: 3px;">
+                            <li>
+                                <a href="javascript:void(0);" title="" id="userPicName">
+                                    <img id="userPic" title="" alt="" src="">
                                 </a>
                             </li>
                             <li>
-                                <a href="/imageselection/index.jhtml">
-                                    摄影大赛
+                                <a href="javascript:void(0);" id="userScore" title="创建游记、发布相册、组织活动、邀请朋友加入都可以获取金币，金币还可
+以兑换小礼品哦！">我的金币：<span id="overage_score" style="color: #136796;"></span></a>
+                            </li>
+                            <li class="dropdown" id="menutest1">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#menutest1">
+                                    <span id="user_name"></span>
+                                    <b class="caret"></b>
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <li id="clubManage" style="display: none;">
+                                        <a href="/mclub/index.chtml">
+                                            <i class="icon-home" style="margin-right: 5px;"></i>俱乐部管理
+                                        </a>
+                                    </li>
+                                    <li id="clubManageLine" class="divider" style="margin: 5px 1px;display: none;"></li>
+                                    <li>
+                                        <a href="/personal/space/index/index.dhtml">
+                                            <i class="icon-home" style="margin-right: 5px;"></i>个人主页
+                                        </a>
+                                    </li>
+                                    <li><a href="#" id="userGuide"><i class="icon-edit" style="margin-right: 5px;"></i>旅行游记</a></li>
+                                    <li><a href="#" id="userPicGroup"><i class="icon-picture" style="margin-right: 5px;"></i>旅行相册</a></li>
+                                    <li><a href="#" id="userActivity"><i class="icon-home" style="margin-right: 5px;"></i>我的活动</a></li>
+                                    <li>
+                                        <a href="/presentfront/exchange-1.dhtml" id="userExhange">
+                                            <i class="icon-heart" style="margin-right:
+5px;"></i>礼品兑换
+                                        </a>
+                                    </li>
+                                    <li class="divider" style="margin: 5px 1px;"></li>
+                                    <li><a href="/auth/editUserEntry.dhtml"><i class="icon-cog" style="margin-right: 5px;"></i>个人设置</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/personal/guide/createArticle.dhtml" title="创建游记"><i class="icon-edit"></i></a>
+                            </li>
+                            <li>
+                                <a href="/auth/logout.dhtml" title="注销登录"><i class=" icon-off"></i></a>
                             </li>
                         </ul>
-                    </li>
-
-                    <li id="cps" style="max-width:120px">
-                        <a href="http://cps.hzins.com/shimengren/">旅行保险</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            var smrRegionName = $.cookie('smrRegionName');
-            if (smrRegionName != '' && smrRegionName != 'undefined' && smrRegionName != null && smrRegionName != 'null') {
-                $("#cityName").html(smrRegionName);
-            }
-            $('.btn-login').attr("href", '/login.jsp?returnUrl=' + location.href);
-        });
-        function changeCity(regionId, regionName) {
-            $.cookie('smrRegionId', regionId, { expires: 30, path: '/' });
-            $.cookie('smrRegionName', regionName, { expires: 30, path: '/' });
-            window.location.reload();
-        }
-    </script>
-    <!-- 第三方登录所需页面 -->
-    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="100452334" data-redirecturi="http://www.shimengren.com/tp_login_cb.html" charset="utf-8"></script>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
-    <hr />
-    <footer>
-        <div class="copyright">
-            <div class="container" style="height: auto;">
-                <div class="row-fluid" style="margin-top: 20px;padding: 10px 0;">
-                    <div class="row-fluid footfont" style="font-size: 12px;">
-                        <dl class="span2">
-                            <dt>关于我们</dt>
-                            <dd><a rel="nofollow" target="siteinfo" href="/about.jhtml" >拾梦人介绍</a></dd>
-                            <dd><a rel="nofollow" >加入拾梦人</a></dd>
-                            <dd><a rel="nofollow" target="siteinfo" href="/contect.jhtml" >联系拾梦人</a></dd>
-                        </dl>
-                        <dl class="span2" style="margin-left: 0px;">
-                            <dt>合作服务</dt>
-                            <dd><a rel="nofollow" href="/registerHelper.jhtml" target="_blank">俱乐部入驻</a></dd>
-                            <dd><a rel="nofollow" href="/authenticate.jhtml" target="_blank">领队认证</a></dd>
-                            <dd><a href="/mclub/login.chtml" title="俱乐部登录">俱乐部登录</a></dd>
-                            <dd><a href="/partners.jhtml" title="合作伙伴" target="_blank">合作伙伴</a></dd>
-                        </dl>
-                        <dl class="span2">
-                            <dt>网站条款</dt>
-                            <dd><a href="/privacy.jhtml" target="_blank"> 服务条款 </a></dd>
-                            <dd><a title="版权声明" href="/copyright.jhtml" target="_blank">版权声明</a></dd>
-                            <dd><a href="/disclaimer.jhtml" target="_blank"> 免责声明 </a></dd>
-                        </dl>
-                        <dl class="span2">
-                            <dt>帮助中心</dt>
-                            <dd><a href="/helper.jhtml" target="_blank"> 报名流程 </a></dd>
-                            <dd><a href="/ask.jhtml" target="_blank"> 咨询反馈 </a></dd>
-                            <dd><a href="/links.jhtml" target="_blank"> 友情链接 </a></dd>
-                        </dl>
-                        <dl class="span2">
-                            <dt>关注拾梦人</dt>
-                            <dd><a title="新浪微博" href="http://weibo.com/shimengrenlvxing" target="_blank">新浪微博</a></dd>
-                            <!--
-                            <dd><a title="腾讯微博" href="http://weibo.com/shimengrenlvxing" target="_blank">腾讯微博</a></dd>
-                            -->
-                            <dd class="">
-                                <a href="javascript:void(0);" class="ltVcode">微信：shimengrenlvxing</a>
-                                <img alt="拾梦人微信" class="vCodeCon" src="/themes/itravelfont/image/weixin.jpg" style="border: 3px solid #fff;position: absolute;height: 100px; width: 100px;display: none;">
-                            </dd>
-                            <script type="text/javascript">
-                                $(".ltVcode").mouseover(function () {
-                                    $(".vCodeCon").show();
-                                }).mouseleave(function () {
-                                    $(".vCodeCon").hide();
-                                });
-                            </script>
-                        </dl>
-                        <dl class="span2">
-                            <dt>拾梦人APP</dt>
-                            <dd style="padding-right: 0px;">
-                                <img style="height: 100px; width: 120px;" src="/Content/images/shimengren_app.png" />
-                            </dd>
-                        </dl>
                     </div>
-                    <div class="row-fluid" style="margin: 15px 0 30px 0;color: #999;">
-                        <div style="text-align: center; font-size: 12px;" class="footfont">
-                            <div class="row-fluid footfont">
-                                <p>拾梦人版权所有 © 2015&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a rel="nofollow" class="record" target="_blank" href="http://www.miibeian.gov.cn" style="color: #999;">粤ICP备13025296号</a></p>
+                </div>
+                <div class="row-fluid">
+                    <div class="span7" style="left: 0px;height: 75px;bottom: 0px;padding-top: 5px;">
+                        <a href="/" class="span8 logoA" style="margin-left: 0px;margin-bottom: 0px;">
+                            <img alt="" src="/Content/images/_logo.png" id="LogoImg" style="margin-bottom: 0px;">
+                        </a>
+                        <div class="span1">
+                            <div class="bar-side fl" style="padding: 0px 10px;margin-left: 10px;margin-top: 15px;border-left: 1px solid #eee;border-left:
+1px solid #ccc;height: 40px;">
+                                <i class="i-icon-location i-icon-common-top png">&nbsp;</i>
                             </div>
-                            <p style="display: none;">
-                                <script src="http://s17.cnzz.com/stat.php?id=5511243&web_id=5511243&show=pic1" language="JavaScript"></script>
-                            </p>
                         </div>
+                        <div class="span3 local-label dropdown" id="changeCityArea" style="margin-top: 15px;margin-left: 0px;">
+                            <h5 class="dropdown-toggle city" data-toggle="dropdown">
+                                <label id="cityName" style="color: #f90;">选择地市</label>
+                            </h5>
+                            <h6 data-toggle="dropdown" style="cursor: pointer;padding: 0 10px;margin: 0 0 0 -1px;color: #999;font: inherit;font-size:
+12px;">
+                                [切换]
+                            </h6>
+                            <div id="db-nav-location-list" class="dropdown-menu nav-local-list" style=" top: 45px; left: 0px;font-size: 14px;"
+                                 role="menu" aria-labelledby="dLabel">
+                                <h5>珠三角地区</h5>
+                                <ul>
+                                    <li><a href="#" onclick="javascript:changeCity('401','广州');">广州</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('402','深圳');">深圳</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('405','佛山');">佛山</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('404','东莞');">东莞</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('420','珠海');">珠海</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('422','中山');">中山</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('425','台山');">台山</a></li>
+                                </ul>
+                                <h5>西南/北地区</h5>
+                                <ul>
+                                    <li><a href="#" onclick="javascript:changeCity('901','成都');">成都</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('3301','重庆');">重庆</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('1202','丽江');">丽江</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('1203','昆明');">昆明</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('1701','西安');">西安</a></li>
+                                </ul>
+                                <h5>华中地区</h5>
+                                <ul>
+                                    <li><a href="#" onclick="javascript:changeCity('2201','武汉');">武汉</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('601','长沙');">长沙</a></li>
+                                    <li><a href="#" onclick="javascript:changeCity('701','南昌');">南昌</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <form class="form-search" style="padding-top: 20px;float: right;background-color: #f7f7f7;padding-bottom:
+0px;border: 0px solid #e3e3e3;margin-bottom: 0px;"
+                              method="post" action="/article/yj/search.jhtml" id="search">
+                            <input type="text" class="input-large" id="keyword" placeholder="搜索游记攻略" name="keyword"
+                                   value=''>
+                            <button type="submit" class="btn">搜索</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+        <div class="navbar " style="position:relative;z-index:1;">
+            <div class="navbar-inner">
+                <div class="container" style="width: 950px;">
+                    <ul class="nav">
+                        <li id="navHome">
+                            <a href="/Home/Index">首页</a>
+                        </li>
+                        <li id="navActivity">
+                            <a href="/Activity/Index">活动</a>
+                        </li>
+                        <li id="tjActivity">
+                            <a href="/Article/Index">
+                                游记分享
+                                <i class="ask_new_ico"></i>
+                            </a>
+                        </li>
+                        <li id="customtrip">
+                            <a href="/Article/Picture">
+                                旅途美景
+                            </a>
+                        </li>
+                        <li id="cps" style="max-width:120px">
+                            <a href="http://cps.hzins.com/shimengren/">旅行保险</a>
+                        </li>
+                        <li id="navArticle" class="dropdown">
+                            <a href="/Article/Question">
+                                常见问答
+                                <i class=" icon-chevron-down icon-white" style="margin-left: 10px;margin-top: 2px;"></i>
+                            </a>
+                        </li>
+
+                       
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                var smrRegionName = $.cookie('smrRegionName');
+                if (smrRegionName != '' && smrRegionName != 'undefined' && smrRegionName != null && smrRegionName != 'null') {
+                    $("#cityName").html(smrRegionName);
+                }
+                $('.btn-login').attr("href", '/login.jsp?returnUrl=' + location.href);
+            });
+            function changeCity(regionId, regionName) {
+                $.cookie('smrRegionId', regionId, { expires: 30, path: '/' });
+                $.cookie('smrRegionName', regionName, { expires: 30, path: '/' });
+                window.location.reload();
+            }
+        </script>
+        <!-- 第三方登录所需页面 -->
+        <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="100452334" data-redirecturi="http://www.shimengren.com/tp_login_cb.html" charset="utf-8"></script>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+        <hr />
+        <footer>
+            <div class="copyright">
+                <div class="container" style="height: auto;">
+                    <div class="row-fluid" style="margin-top: 20px;padding: 10px 0;">
+                        <div class="row-fluid footfont" style="font-size: 12px;">
+                            <dl class="span2">
+                                <dt>关于我们</dt>
+                                <dd><a rel="nofollow" target="siteinfo" href="/about.jhtml">拾梦人介绍</a></dd>
+                                <dd><a rel="nofollow" href="#">加入拾梦人</a></dd>
+                                <dd><a rel="nofollow" target="siteinfo" href="/contect.jhtml">联系拾梦人</a></dd>
+                            </dl>
+                            <dl class="span2" style="margin-left: 0px;">
+                                <dt>合作服务</dt>
+                                <dd><a rel="nofollow" href="/registerHelper.jhtml" target="_blank">俱乐部入驻</a></dd>
+                                <dd><a rel="nofollow" href="/authenticate.jhtml" target="_blank">领队认证</a></dd>
+                                <dd><a href="/mclub/login.chtml" title="俱乐部登录">俱乐部登录</a></dd>
+                                <dd><a href="/partners.jhtml" title="合作伙伴" target="_blank">合作伙伴</a></dd>
+                            </dl>
+                            <dl class="span2">
+                                <dt>网站条款</dt>
+                                <dd><a href="/privacy.jhtml" target="_blank"> 服务条款 </a></dd>
+                                <dd><a title="版权声明" href="/copyright.jhtml" target="_blank">版权声明</a></dd>
+                                <dd><a href="/disclaimer.jhtml" target="_blank"> 免责声明 </a></dd>
+                            </dl>
+                            <dl class="span2">
+                                <dt>帮助中心</dt>
+                                <dd><a href="/helper.jhtml" target="_blank"> 报名流程 </a></dd>
+                                <dd><a href="/ask.jhtml" target="_blank"> 咨询反馈 </a></dd>
+                                <dd><a href="/links.jhtml" target="_blank"> 友情链接 </a></dd>
+                            </dl>
+                            <dl class="span2">
+                                <dt>关注拾梦人</dt>
+                                <dd><a title="新浪微博" href="http://weibo.com/shimengrenlvxing" target="_blank">新浪微博</a></dd>
+                                <!--
+                                <dd><a title="腾讯微博" href="http://weibo.com/shimengrenlvxing" target="_blank">腾讯微博</a></dd>
+                                -->
+                                <dd class="">
+                                    <a href="javascript:void(0);" class="ltVcode">微信：shimengrenlvxing</a>
+                                    <img alt="拾梦人微信" class="vCodeCon" src="/themes/itravelfont/image/weixin.jpg" style="border: 3px solid #fff;position: absolute;height: 100px; width: 100px;display: none;">
+                                </dd>
+
+                            </dl>
+                            <dl class="span2">
+                                <dt>拾梦人APP</dt>
+                                <dd style="padding-right: 0px;">
+                                    <img style="height: 100px; width: 120px;" src="/Content/images/shimengren_app.png" />
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="row-fluid" style="margin: 15px 0 30px 0;color: #999;">
+                            <div style="text-align: center; font-size: 12px;" class="footfont">
+                                <div class="row-fluid footfont">
+                                    <p>拾梦人版权所有 © 2015&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a rel="nofollow" class="record" target="_blank" href="http://www.miibeian.gov.cn" style="color: #999;">粤ICP备13025296号</a></p>
+                                </div>
+                                <p style="display: none;">
+                                    <script src="http://s17.cnzz.com/stat.php?id=5511243&web_id=5511243&show=pic1" language="JavaScript"></script>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(".ltVcode").mouseover(function () {
+                    $(".vCodeCon").show();
+                }).mouseleave(function () {
+                    $(".vCodeCon").hide();
+                });
+            </script>
+
+        </footer>
     <!-- <img alt="回到顶部" src="/themes/itravelfont/image/uptotop.png" class="uptotop" style="display:none"> -->
-    @*<a class="uptotop" style="display:none" href="javascript:void(0);" style="position: fixed; right: 94px; top: 56px;" title="飞回顶部">回到顶部</a>*@
+    <a class="uptotop"  href="javascript:void(0);" style="display: none;position: fixed; right: 94px; bottom: 56px;" title="飞回顶部">回到顶部</a>
     <!-- 通用js -->
     <script src="/js/plugins/jquery.json.js" type="text/javascript"></script>
     <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
@@ -379,7 +365,6 @@
         });
         $("#navHome").addClass("active");
     </script>
-
 
 </body>
 </html>

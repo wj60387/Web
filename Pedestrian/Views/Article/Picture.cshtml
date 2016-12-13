@@ -1,0 +1,974 @@
+﻿@{
+    ViewBag.Title = "相册";
+}
+<style type="text/css">
+    .imgbox {
+        width: 100%;
+        height: 380px;
+        border: 1px #DDD solid;
+        margin: 10px auto;
+        margin-top: 0px;
+        margin-left: 5px;
+        position: relative;
+    }
+
+        .imgbox .list {
+            display: none;
+        }
+</style>
+<script type="text/javascript" src="/themes/itravelfont/js/jquery.min.js"></script>
+<script type="text/javascript" src="/themes/itravelfont/js/jquery.lazyload_1.8.3.js"></script>
+<script>
+    $(function () {
+        $("img.lazy").lazyload();
+    });
+</script>
+<div class="row-fluid" style="margin-bottom:0;">
+    <!-- 右边滚动图片内容start -->
+    <div class="row-fluid widget-content" style="margin-bottom: 20px;padding: 0;">
+        <div class="imgbox">
+            <div class="list">
+                <a target="_blank" href="#" title="阳朔骑行，用车轮丈量青春">
+                    <img src="/Content/images/attached/image/20131012/20131012161722_40.jpg" border="0" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 右边滚动图片内容end -->
+    <hr style="margin: 10px 0;">
+    <!-- 右边热门相册内容start -->
+    <div class="row-fluid bg_title">
+        <div class="picture">
+            <h3 style="color: #636363;line-height: 25px;font-size:18px;margin-bottom: 10px;">旅游图片</h3>
+        </div>
+        <div class="row-fluid content" id="piclist">
+            <ul class="ul_list">
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1452.jhtml" title="广东八大高山草原之阳春鸡笼顶大草原">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20151006/20151006162422_6_220_200.jpg">
+                        </p>
+                    </a>
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1452.jhtml" title="广东八大高山草原之阳春鸡笼顶大草原" target="_blank">
+                            广东八大高山草原之阳春鸡笼...
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-594.dhtml" class="">
+                                猎梦户外
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                120
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1451.jhtml" title="专辑，呵呵展示">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20151002/20151002190456_138_220_200.jpg">
+                        </p>
+                    </a>
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1451.jhtml" title="专辑，呵呵展示" target="_blank">
+                            专辑，呵呵展示
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1019922.dhtml" class="">
+                                SEA大海
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                5
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1450.jhtml" title="广州龙渔线徒步">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150923/20150923135946_613_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1450.jhtml" title="广州龙渔线徒步" target="_blank">
+                            广州龙渔线徒步
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018507.dhtml" class="">
+                                smile0718
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                32
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1449.jhtml" title="快乐东西冲穿越">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150923/20150923135444_18_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1449.jhtml" title="快乐东西冲穿越" target="_blank">
+                            快乐东西冲穿越
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018507.dhtml" class="">
+                                smile0718
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                31
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ul_list">
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1447.jhtml" title=" 夜登牛头山，看城市风景~风雨无阻">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150916/20150916002559_549_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1447.jhtml" title=" 夜登牛头山，看城市风景~风雨无阻" target="_blank">
+                            夜登牛头山，看城市风景~...
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018777.dhtml" class="">
+                                天下坦途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                20
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1446.jhtml" title="9月13日龙火线30公里徒步">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150915/20150915130243_705_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1446.jhtml" title="9月13日龙火线30公里徒步" target="_blank">
+                            9月13日龙火线30公里徒步
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018777.dhtml" class="">
+                                天下坦途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                17
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1444.jhtml" title="徒步行">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150903/20150903034813_395_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1444.jhtml" title="徒步行" target="_blank">
+                            徒步行
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1016797.dhtml" class="">
+                                行天下户外
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                12
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1443.jhtml" title="雨崩">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150902/20150902152943_455_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1443.jhtml" title="雨崩" target="_blank">
+                            雨崩
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018452.dhtml" class="">
+                                阿俊
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                19
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ul_list">
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1442.jhtml" title="新疆喀拉峻——壮美阔克苏大峡谷">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150901/20150901102130_481_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1442.jhtml" title="新疆喀拉峻——壮美阔克苏大峡谷" target="_blank">
+                            新疆喀拉峻——壮美阔克苏大...
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018228.dhtml" class="">
+                                可乐雨鱼
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                11
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1440.jhtml" title="张家界">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150830/20150830203310_776_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1440.jhtml" title="张家界" target="_blank">
+                            张家界
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1014943.dhtml" class="">
+                                陆梅花
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                44
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1439.jhtml" title="吴哥">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150826/20150826225410_215_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1439.jhtml" title="吴哥" target="_blank">
+                            吴哥
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/org/orgIndex.jhtml?org_id=1005513" class="">
+                                爱旅途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                40
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1438.jhtml" title="金秋呼伦贝尔草原">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150826/20150826225027_150_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1438.jhtml" title="金秋呼伦贝尔草原" target="_blank">
+                            金秋呼伦贝尔草原
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/org/orgIndex.jhtml?org_id=1005513" class="">
+                                爱旅途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                53
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ul_list">
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1437.jhtml" title="雁南飞茶园">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150826/20150826224917_401_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1437.jhtml" title="雁南飞茶园" target="_blank">
+                            雁南飞茶园
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/org/orgIndex.jhtml?org_id=1005513" class="">
+                                爱旅途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                47
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1436.jhtml" title="五指石栈道">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150826/20150826224834_321_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1436.jhtml" title="五指石栈道" target="_blank">
+                            五指石栈道
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/org/orgIndex.jhtml?org_id=1005513" class="">
+                                爱旅途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                41
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1435.jhtml" title="绚丽额济纳胡杨林">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150826/20150826224706_402_220_200.jpeg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1435.jhtml" title="绚丽额济纳胡杨林" target="_blank">
+                            绚丽额济纳胡杨林
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/org/orgIndex.jhtml?org_id=1005513" class="">
+                                爱旅途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                34
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1434.jhtml" title="绚丽额济纳胡杨林、沙头坡">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150826/20150826224436_134_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1434.jhtml" title="绚丽额济纳胡杨林、沙头坡" target="_blank">
+                            绚丽额济纳胡杨林、沙头坡
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/org/orgIndex.jhtml?org_id=1005513" class="">
+                                爱旅途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                25
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ul_list">
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1433.jhtml" title="梅州坪山梯田">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150826/20150826223917_174_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1433.jhtml" title="梅州坪山梯田" target="_blank">
+                            梅州坪山梯田
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/org/orgIndex.jhtml?org_id=1005513" class="">
+                                爱旅途
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                236
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1432.jhtml" title="牛木">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150825/20150825223517_969_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1432.jhtml" title="牛木" target="_blank">
+                            牛木
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018173.dhtml" class="">
+                                嘉庚
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                12
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1431.jhtml" title="龟龄岛露营">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150825/20150825164142_22_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1431.jhtml" title="龟龄岛露营" target="_blank">
+                            龟龄岛露营
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1006583.dhtml" class="">
+                                末行者
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                38
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3 thumbnail pic">
+                    <a href="/pg/1430.jhtml" title="我">
+                        <p>
+                            <img class="lazy" style="height:150px;width:218px;" src="/Content/images/attached/default/default_pic.jpg" data-original="/Content/images/attached/image/20150825/20150825152235_318_220_200.jpg">
+                        </p>
+                    </a>
+
+                    <h5 style="margin:5px 0;">
+                        <a class="middle_title" href="/pg/1430.jhtml" title="我" target="_blank">
+                            我
+                        </a>
+                    </h5>
+                    <div class="font12">
+                        <span class="pic_user font12" style="float: left;">
+                            作者:
+                            <a href="/personal/space/index/index-1018155.dhtml" class="">
+                                强哥
+                            </a>
+                        </span>
+                        <div class="bbs_titbox_info" style="float: right; margin-right: 2px;">
+                            <a class="infos" style="text-decoration: none;color: #666;" title="浏览次数">
+                                <i class="views"></i>
+                                21
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+             
+        </div>
+        <div id="page">
+            <a href="javascript:void(0);" class="p">首页</a>
+            <a class="current" href="javascript:void(0);">1</a>
+            <a class="" href="/picindex-2.jhtml">2</a>
+            <a class="" href="/picindex-3.jhtml">3</a>
+            <a class="" href="/picindex-4.jhtml">4</a>
+            <a class="" href="/picindex-5.jhtml">5</a>
+            <a class="" href="/picindex-6.jhtml">6</a>
+            <a class="" href="/picindex-7.jhtml">7</a>
+            <a class="" href="/picindex-8.jhtml">8</a>
+            <a class="" href="/picindex-9.jhtml">9</a>
+            <a href="/picindex-2.jhtml" class="n">下一页</a>
+        </div>
+    </div>
+    <!-- 右边热门图片内容end -->
+</div>
+<hr style="margin-bottom: 15px;">
+<div class="row-fluid">
+    <div class="row-fluid">
+        <div style="position: relative;margin-bottom: 30px;">
+            <div class="span6">
+                <i style="height: 20px;width: 8px;background-color: #1abc9c;position: absolute;margin: 15px 0;"></i>
+                <h5 style="font-size: 18px;font-weight: 400;font-style: normal;color: #666666;margin-left: 20px;line-height: 30px;">目的地列表</h5>
+            </div>
+            <div class="span6">
+                <h5 style="font-size: 18px;font-weight: 400;font-style: normal;color: #666666;float: right;">
+                    <a class="ui-flat-buttom" style="background-color: #faa732;" href="/mdd/edit.dhtml">+ 创建新目的地</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="mdd_li">
+        <ul>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/61.jhtml" target="_blank">
+                    小东江
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/19.jhtml" target="_blank">
+                    肇庆羚羊峡
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/20.jhtml" target="_blank">
+                    墨脱
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/21.jhtml" target="_blank">
+                    稻城亚丁
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/28.jhtml" target="_blank">
+                    阳江大树岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/24.jhtml" target="_blank">
+                    虎跳峡
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/25.jhtml" target="_blank">
+                    漓江
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/26.jhtml" target="_blank">
+                    船底顶
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/46.jhtml" target="_blank">
+                    韭菜岭
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/45.jhtml" target="_blank">
+                    九顶山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/49.jhtml" target="_blank">
+                    鳌山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/69.jhtml" target="_blank">
+                    南雄银杏
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/41.jhtml" target="_blank">
+                    汕尾龟龄岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/40.jhtml" target="_blank">
+                    武功山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/39.jhtml" target="_blank">
+                    惠州逍遥谷
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/18.jhtml" target="_blank">
+                    佛冈观音山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/17.jhtml" target="_blank">
+                    黑排角海岸线
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/68.jhtml" target="_blank">
+                    厦门鼓浪屿
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/64.jhtml" target="_blank">
+                    阳朔
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/65.jhtml" target="_blank">
+                    张家界
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/54.jhtml" target="_blank">
+                    珠海庙湾
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/53.jhtml" target="_blank">
+                    黄姚古镇
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/66.jhtml" target="_blank">
+                    凤凰古城
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/11.jhtml" target="_blank">
+                    英西峰林
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/12.jhtml" target="_blank">
+                    从化天堂顶
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/15.jhtml" target="_blank">
+                    深圳东西冲
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/14.jhtml" target="_blank">
+                    古影线
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/55.jhtml" target="_blank">
+                    湘桂古商道
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/42.jhtml" target="_blank">
+                    惠州白云嶂
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/43.jhtml" target="_blank">
+                    惠州大南山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/50.jhtml" target="_blank">
+                    海坨山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/44.jhtml" target="_blank">
+                    增城牛轱樟
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/52.jhtml" target="_blank">
+                    佛顶山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/48.jhtml" target="_blank">
+                    小五台山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/47.jhtml" target="_blank">
+                    扎尕那山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/51.jhtml" target="_blank">
+                    雪岭
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/38.jhtml" target="_blank">
+                    惠州小辣甲岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/37.jhtml" target="_blank">
+                    茂名放鸡岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/5.jhtml" target="_blank">
+                    广州小洲村
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/6.jhtml" target="_blank">
+                    沙面
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/7.jhtml" target="_blank">
+                    牛木线
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/9.jhtml" target="_blank">
+                    白云山
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/10.jhtml" target="_blank">
+                    通天蜡烛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/13.jhtml" target="_blank">
+                    花都
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/23.jhtml" target="_blank">
+                    喀纳斯湖
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/27.jhtml" target="_blank">
+                    广州
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/22.jhtml" target="_blank">
+                    四姑娘山毕棚沟
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/29.jhtml" target="_blank">
+                    珠海荷包岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/30.jhtml" target="_blank">
+                    珠海东澳岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/31.jhtml" target="_blank">
+                    珠海外伶仃岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/1373.jhtml" target="_blank">
+                    古劳水乡
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/34.jhtml" target="_blank">
+                    惠州大甲岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/35.jhtml" target="_blank">
+                    上下川岛
+                </a>
+            </li>
+            <li style="margin-bottom: 15px;width: 105px;">
+                <a class="ui-font" style="color: #666666;" href="/mdd/index/36.jhtml" target="_blank">
+                    阳江海陵岛
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 网站尾部 start-->
+<div class="error">
+    <span></span>
+</div>
+<div class="warning">
+    <span></span>
+</div>
+<div class="success">
+    <span></span>
+</div>
+<script type="text/javascript">
+<!--
+//验证不通过，错误提示
+function showError(msg,time){
+time = time ? time : 3000;
+var wrap=$(".error");
+wrap[0].timer&&clearTimeout(wrap[0].timer);
+wrap.find("span").html("&nbsp;&nbsp;"+msg);
+wrap.show();
+wrap[0].timer=setTimeout(function(){
+wrap.animate({"opacity":"0"},"normal","",function(){
+wrap.hide();
+wrap.css("opacity","1");
+});
+},time);
+}
+function showWarning(msg,time){
+time = time ? time : 3000;
+var wrap=$(".warning");
+wrap[0].timer&&clearTimeout(wrap[0].timer);
+wrap.find("span").html("&nbsp;&nbsp;"+msg);
+wrap.show();
+wrap[0].timer=setTimeout(function(){
+wrap.animate({"opacity":"0"},"normal","",function(){
+wrap.hide();
+wrap.css("opacity","1");
+});
+},time);
+}
+function showSuccess(msg,time){
+time = time ? time : 3000;
+var wrap=$(".success");
+wrap[0].timer&&clearTimeout(wrap[0].timer);
+wrap.find("span").html("&nbsp;&nbsp;"+msg);
+wrap.show();
+wrap[0].timer=setTimeout(function(){
+wrap.animate({"opacity":"0"},"normal","",function(){
+wrap.hide();
+wrap.css("opacity","1");
+});
+},time);
+}
+</script>
+<div class="row-fluid">
+    <div id="loading" class="modal hide fade in" style="margin:-35px 0 0 -100px;display: none;width: 200px;height: 50px;text-align: center;padding: 10px;">
+        <div class="modal-body" style="max-height: 30px;padding: 10px;">
+            <img style="-webkit-user-select: none" src="/themes/itravelfont/image/loading.gif">
+            提交处理中
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/custom_plugins/jquery.imgbox.js"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('div.imgbox').imgbox({ "changeTime": 5, 'imgPath': '/js/custom_plugins/' });
+    });
+</script>
+<!-- 菜单 -->
+<script type="text/javascript">
+    $("#navPicture").addClass("active");
+</script>
+
+
+
