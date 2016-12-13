@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>拾梦人 - 在路上，遇见另一个自己！</title>
+    <title>10.1.43.56 山友集中营</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta content="拾梦人，拾梦人旅行网 -- 最权威的户外旅游目的地的攻略提供者。为广大驴友、旅行者，提供完善、精美的户外旅行攻略手册。旅途中与您为伴是我们的的追求，精彩旅途从拾梦人旅行网开始。" name="description">
     <meta content="拾梦人，拾梦人旅行网，户外旅游，户外目的地，户外目的地游记，户外目的地攻略，户外目的地景点" name="keywords">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    @*<meta content="width=device-width, initial-scale=1.0" name="viewport">*@
     <link rel="shortcut icon" type="image/x-icon" href="/themes/logo.png" media="screen" />
     <link rel="stylesheet" href="/themes/itravelfont/act_css.css" type="text/css" />
     <style type="text/css">
@@ -29,41 +29,29 @@
             position: fixed;
             width: 170px;
             height: 230px;
-            left: 1160px;
+            left: 10px;
             bottom: 115px;
-            background-image: url('Content/images/attached/wx.jpg');
-        }
-        body {
-            width: 100%;
-            margin: 0px;
-        }
-        .containerQQ1 {
-            width: 950px;
-            height: 100%;
-            border: 1px solid red;
-            margin: 0 auto;
+            background-image: url('/Content/images/attached/wx.jpg');
         }
     </style>
     <script type="text/javascript" src="/js/redirect/mobileRedirect.js"></script>
-
+    <script type="text/javascript">
+        var globalUser;
+        var imagePath = 'Content/images';
+        var contextPath = '';
+    </script>
+    <link rel="shortcut icon" type="image/x-icon" href="~/themes/logo.png" media="screen" />
+    <link rel="stylesheet" href="/js/unslider/style.css" type="text/css" />
+    <link rel="stylesheet" href="/themes/bootstrap/css/bootstrap_bak.css" type="text/css" />
+    <link rel="stylesheet" href="/themes/bootstrap/css/customnav.css" type="text/css" />
+    <link rel="stylesheet" href="/themes/itravelfont/common.css" type="text/css" />
+    <script type="text/javascript" src="/js/header.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/sochange/jquery.soChange.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script src="/js/unslider/unslider.min.js"></script>
 </head>
 <body class="fontYaHei">
-    <div class="containerQQ1">
-        <script type="text/javascript">
-            var globalUser;
-            var imagePath = 'Content/images';
-            var contextPath = '';
-        </script>
-        <link rel="shortcut icon" type="image/x-icon" href="~/themes/logo.png" media="screen" />
-        <link rel="stylesheet" href="/js/unslider/style.css" type="text/css" />
-        <link rel="stylesheet" href="/themes/bootstrap/css/bootstrap_bak.css" type="text/css" />
-        <link rel="stylesheet" href="/themes/bootstrap/css/customnav.css" type="text/css" />
-        <link rel="stylesheet" href="/themes/itravelfont/common.css" type="text/css" />
-        <script type="text/javascript" src="/js/header.js"></script>
-        <script type="text/javascript" src="/js/jquery.js"></script>
-        <script type="text/javascript" src="/js/sochange/jquery.soChange.js"></script>
-        <script type="text/javascript" src="/js/common.js"></script>
-        <script src="/js/unslider/unslider.min.js"></script>
         <div id="wx-feedback"></div>
         <div style="background-color: #f7f7f7;">
             <div class="container">
@@ -140,8 +128,8 @@
                             </div>
                         </div>
                         <div class="span3 local-label dropdown" id="changeCityArea" style="margin-top: 15px;margin-left: 0px;">
-                            <h5 class="dropdown-toggle city" data-toggle="dropdown" href="#">
-                                <p id="cityName" style="color: #f90;">选择地市</p>
+                            <h5 class="dropdown-toggle city" data-toggle="dropdown">
+                                <label id="cityName" style="color: #f90;">选择地市</label>
                             </h5>
                             <h6 data-toggle="dropdown" style="cursor: pointer;padding: 0 10px;margin: 0 0 0 -1px;color: #999;font: inherit;font-size:
 12px;">
@@ -196,45 +184,30 @@
                             <a href="/Home/Index">首页</a>
                         </li>
                         <li id="navActivity">
-                            <a href="/Home/Contact">活动</a>
+                            <a href="/Activity/Index">活动</a>
                         </li>
                         <li id="tjActivity">
-                            <a href="/activity/operation/boutiqueIndex.jhtml">
-                                双11特卖
+                            <a href="/Article/Index">
+                                游记分享
                                 <i class="ask_new_ico"></i>
                             </a>
                         </li>
                         <li id="customtrip">
-                            <a href="/customtrip/index.jhtml">
-                                定制旅行
+                            <a href="/Article/Picture">
+                                旅途美景
                             </a>
                         </li>
-                        <li id="navArticle" class="dropdown">
-                            <a href="javascript:void(0);" style="cursor:pointer;">
-                                发现
-                                <i class=" icon-chevron-down icon-white" style="margin-left: 10px;margin-top: 2px;"></i>
-                            </a>
-                            <ul class="dropdown-menu cdropdown-menu">
-                                <li style="border-bottom: 1px solid #e0e0e0;"><a href="/article/yj/search.jhtml">游记分享</a></li>
-                                <li style="border-bottom: 1px solid #e0e0e0;"><a href="/mdd/index.jhtml">目的地</a></li>
-                                <li style="border-bottom: 1px solid #e0e0e0;"><a href="/picindex.jhtml">旅途美景</a></li>
-                                <li style="border-bottom: 1px solid #e0e0e0;"><a href="/activity/operation/freeIndex.jhtml">自由结伴</a></li>
-                                <li style="border-bottom: 1px solid #e0e0e0;">
-                                    <a href="/group/group/ntindex.jhtml">
-                                        话题小组
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/imageselection/index.jhtml">
-                                        摄影大赛
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
                         <li id="cps" style="max-width:120px">
                             <a href="http://cps.hzins.com/shimengren/">旅行保险</a>
                         </li>
+                        <li id="navArticle" class="dropdown">
+                            <a href="/Article/Question">
+                                常见问答
+                                <i class=" icon-chevron-down icon-white" style="margin-left: 10px;margin-top: 2px;"></i>
+                            </a>
+                        </li>
+
+                       
 
                     </ul>
                 </div>
@@ -268,7 +241,7 @@
                             <dl class="span2">
                                 <dt>关于我们</dt>
                                 <dd><a rel="nofollow" target="siteinfo" href="/about.jhtml">拾梦人介绍</a></dd>
-                                <dd><a rel="nofollow">加入拾梦人</a></dd>
+                                <dd><a rel="nofollow" href="#">加入拾梦人</a></dd>
                                 <dd><a rel="nofollow" target="siteinfo" href="/contect.jhtml">联系拾梦人</a></dd>
                             </dl>
                             <dl class="span2" style="margin-left: 0px;">
@@ -322,77 +295,76 @@
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                $(".ltVcode").mouseover(function () {
+                    $(".vCodeCon").show();
+                }).mouseleave(function () {
+                    $(".vCodeCon").hide();
+                });
+            </script>
+
         </footer>
-        <script type="text/javascript">
-            $(".ltVcode").mouseover(function () {
-                $(".vCodeCon").show();
-            }).mouseleave(function () {
-                $(".vCodeCon").hide();
+    <!-- <img alt="回到顶部" src="/themes/itravelfont/image/uptotop.png" class="uptotop" style="display:none"> -->
+    <a class="uptotop"  href="javascript:void(0);" style="display: none;position: fixed; right: 94px; bottom: 56px;" title="飞回顶部">回到顶部</a>
+    <!-- 通用js -->
+    <script src="/js/plugins/jquery.json.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <!-- 当前登录用户 -->
+    <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-modal.js"></script>
+    <script type="text/javascript">
+        var contextPath = '';
+        var imagePath = 'Content/images';
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 0)
+                    $('.uptotop').show();
+                else
+                    $('.uptotop').hide();
             });
-        </script>
-
-        <!-- <img alt="回到顶部" src="/themes/itravelfont/image/uptotop.png" class="uptotop" style="display:none"> -->
-        @*<a class="uptotop" style="display:none" href="javascript:void(0);" style="position: fixed; right: 94px; top: 56px;" title="飞回顶部">回到顶部</a>*@
-        <!-- 通用js -->
-        <script src="/js/plugins/jquery.json.js" type="text/javascript"></script>
-        <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="/js/jquery.cookie.js"></script>
-        <!-- 当前登录用户 -->
-        <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-dropdown.js"></script>
-        <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-modal.js"></script>
-        <script type="text/javascript">
-            var contextPath = '';
-            var imagePath = 'Content/images';
-            $(function () {
-                $(window).scroll(function () {
-                    if ($(window).scrollTop() > 0)
-                        $('.uptotop').show();
-                    else
-                        $('.uptotop').hide();
+            $('.uptotop').mouseover(function () {
+                $(this).css({ 'background-position': '0 0' });
+            });
+            $('.uptotop').mouseleave(function () {
+                $(this).css({ 'background-position': '-52px 0' });
+            });
+            $('.uptotop').click(function () {
+                $(window).scrollTop(0);
+            });
+        })
+    </script>
+    <script type="text/javascript" src="/js/footer.js"></script>
+    <style>
+        .validate-error {
+            font-size: 13px;
+            color: red;
+        }
+    </style>
+    <!-- 网站尾部 end-->
+    <!-- 菜单 -->
+    <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-popover.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.navigation-detail:has(i)').each(function (index) {
+                var txt = $($('.ul-item').get(index)).html();
+                var options = {
+                    animation: true
+                , content: txt
+                };
+                $(this).popover(options);
+            });
+            $('.navigation-detail').bind('mouseover',
+            function () {
+                $('.popover,.in').hover(function () { }, function () {
+                    $('.popover,.in').removeClass('in');
                 });
-                $('.uptotop').mouseover(function () {
-                    $(this).css({ 'background-position': '0 0' });
-                });
-                $('.uptotop').mouseleave(function () {
-                    $(this).css({ 'background-position': '-52px 0' });
-                });
-                $('.uptotop').click(function () {
-                    $(window).scrollTop(0);
-                });
-            })
-        </script>
-        <script type="text/javascript" src="/js/footer.js"></script>
-        <style>
-            .validate-error {
-                font-size: 13px;
-                color: red;
             }
-        </style>
-        <!-- 网站尾部 end-->
-        <!-- 菜单 -->
-        <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-tooltip.js"></script>
-        <script type="text/javascript" src="/themes/bootstrap/js/bootstrap-popover.js"></script>
-        <script type="text/javascript">
-            $(function () {
-                $('.navigation-detail:has(i)').each(function (index) {
-                    var txt = $($('.ul-item').get(index)).html();
-                    var options = {
-                        animation: true
-                    , content: txt
-                    };
-                    $(this).popover(options);
-                });
-                $('.navigation-detail').bind('mouseover',
-                function () {
-                    $('.popover,.in').hover(function () { }, function () {
-                        $('.popover,.in').removeClass('in');
-                    });
-                }
-                );
-            });
-            $("#navHome").addClass("active");
-        </script>
+            );
+        });
+        $("#navHome").addClass("active");
+    </script>
 
-    </div>
 </body>
 </html>

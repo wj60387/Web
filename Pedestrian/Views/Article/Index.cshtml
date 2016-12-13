@@ -1,0 +1,1283 @@
+﻿@{
+    ViewBag.Title = "步行者-活动";
+}
+<style type="">
+    .du-recommendation {
+        width: 208px;
+        _width: 216px;
+        height: 348px;
+        border: 1px solid #e4e7e8;
+        padding: 10px 0 30px 20px;
+        margin-bottom: 20px;
+        float: left;
+    }
+
+    span.du-recommendation-title, span.hot-destinations-title {
+        font-family: '微软雅黑','黑体';
+        font-size: 14px;
+        color: #666;
+    }
+
+    .notes-categories {
+        margin: 10px 0 15px 0;
+        line-height: 24px;
+        height: 40px;
+    }
+
+    .hot-destinations {
+        border-top: 1px dotted #DDD;
+        width: 200px;
+        padding: 10px 0 0 0;
+        position: relative;
+    }
+
+    .notes-categories ul {
+        margin-left: 0;
+    }
+
+    .notes-categories li {
+        display: inline-block;
+        background: #eaf4ff;
+        border-radius: 5px;
+        border: 1px solid #d5e7ed;
+        white-space: nowrap;
+        float: left;
+        font-size: 12px;
+        margin: 0 5px 5px 0;
+    }
+
+        .notes-categories li a:hover {
+            color: white;
+            background: #147850;
+            text-decoration: none;
+        }
+
+        .notes-categories li a.notes-active {
+            color: white;
+            background: #147850;
+            text-decoration: none;
+        }
+
+        .notes-categories li a {
+            cursor: pointer;
+            display: inline-block;
+            padding: 0 10px;
+            line-height: 24px;
+            color: #007ed9;
+            border-radius: 4px;
+        }
+
+    span.du-recommendation-title, span.hot-destinations-title {
+        font-family: '微软雅黑','黑体';
+        font-size: 14px;
+        color: #666;
+    }
+
+    .notes-cms {
+        float: right;
+        margin: 10px 0 15px 0;
+    }
+
+        .notes-cms .notes-cms-group {
+            margin: 0 0 20px 0;
+            _margin: 0 0 20px 0;
+        }
+
+    .notes-cms-group li {
+        display: inline-block;
+        float: left;
+        font-size: 12px;
+        margin: 0 10px 10px 0;
+        color: #007ed9;
+        background: #eaf4ff;
+        border-radius: 5px;
+        border: 1px solid #d5e7ed;
+        white-space: nowrap;
+    }
+
+        .notes-cms-group li a {
+            display: inline-block;
+            padding: 0 10px;
+            line-height: 24px;
+            color: #007ed9;
+            border-radius: 4px;
+        }
+</style>
+
+<div class="container" style="padding-top: 20px;">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="head_crumb fontYaHei">
+                <span class="text"><a href="/index.jhtml">首页</a></span>
+                <span class="space">&gt;</span>
+                <span class="text">
+                    <a href="/mdd/index.jhtml"></i>目的地</a>
+                </span>
+                <span class="space">&gt;</span>
+                <span class="text drop">
+                    游记
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 导航end -->
+<div class="container">
+
+
+    <div class="row-fluid">
+        <span class="span6">
+            <img style="height: 54px;" src="/themes/itravelfont/image/guide_pic.jpg" alt="Du行天使" title="旅行，是你能买到的唯一一件使你更富有的东西。">
+        </span>
+        <span class="span6">
+            <form class="form-search" style="padding-top: 30px;float: right;padding-bottom: 0px;border: 0px solid #e3e3e3;margin-bottom: 0px;"
+                  method="post" action="/article/yj/search.jhtml" id="search">
+                <input type="text" class="input-xlarge" id="keyword" placeholder="搜索游记攻略" name="keyword" value=''>
+                <input type="hidden" id="article_type" name="article_type" value='time'>
+                <input type="hidden" id="destination_id" name="destination_id" value=''>
+                <button type="submit" class="btn" id="searchBtn">搜索</button>
+            </form>
+
+        </span>
+    </div>
+    <hr style="margin: 10px 0;">
+
+    <div class="row-fluid">
+        <div class="span3">
+            <div style="height: 500px;border: 1px solid #e4e7e8;padding: 10px 8px 30px 8px;margin-bottom: 20px;float: left;">
+                <span class="fontYaHei" style="font-size: 14px;color: #666;">按此排序</span>
+                <div class="notes-categories">
+                    <ul>
+                        <li>
+                            <a _type="time" id="guide-notes" class="article-categories" href="javascript:void(0);">最新</a>
+                            <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                        </li>
+                        <li>
+                            <a _type="hot" id="latest-notes" class="article-categories" href="javascript:void(0);">热门</a>
+                            <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                        </li>
+                        <li>
+                            <a _type="marrow" id="praise-notes" class="article-categories" href="javascript:void(0);">精华</a>
+                            <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                        </li>
+                    </ul>
+                </div>
+                <div class="hot-destinations">
+                    <span class="hot-destinations-title">按目的地筛选</span>
+                    <div class="notes-cms clearfix">
+                        <ul class="notes-cms-group clearfix nslog-area notes-categories" id="J_notes-cms-china" data-nslog="{&quot;type&quot;:469,&quot;page&quot;:&quot;search&quot;,&quot;cmd&quot;:&quot;click&quot;,&quot;pos&quot;:&quot;search-cms&quot;}">
+                            <li>
+                                <a class="scene-choose" data-sname="火凤线" _id="1" href="javascript:void(0);">火凤线</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="牛木线" _id="7" href="javascript:void(0);">牛木线</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="牛天凤" _id="8" href="javascript:void(0);">牛天凤</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="英西峰林" _id="11" href="javascript:void(0);">英西峰林</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="从化天堂顶" _id="12" href="javascript:void(0);">从化天堂顶</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="古影线" _id="14" href="javascript:void(0);">古影线</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="深圳东西冲" _id="15" href="javascript:void(0);">深圳东西冲</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="黑排角海岸线" _id="17" href="javascript:void(0);">黑排角海岸线</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="佛冈观音山" _id="18" href="javascript:void(0);">佛冈观音山</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+                            <li>
+                                <a class="scene-choose" data-sname="漓江" _id="25" href="javascript:void(0);">漓江</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+
+
+                        </ul>
+                        <ul class="notes-cms-group clearfix nslog-area  notes-categories" id="J_notes-cms-foreign" data-nslog="{&quot;type&quot;:469,&quot;page&quot;:&quot;search&quot;,&quot;cmd&quot;:&quot;click&quot;,&quot;pos&quot;:&quot;search-cms&quot;}">
+                            <li>
+                                <a class="scene-choose" data-sname="黄埔古港" _id="2" href="javascript:void(0);">黄埔古港</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+                            <li>
+                                <a class="scene-choose" data-sname="大夫山" _id="3" href="javascript:void(0);">大夫山</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+                            <li>
+                                <a class="scene-choose" data-sname="广州国际生物岛" _id="4" href="javascript:void(0);">广州国际生物岛</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+                            <li>
+                                <a class="scene-choose" data-sname="广州小洲村" _id="5" href="javascript:void(0);">广州小洲村</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+                            <li>
+                                <a class="scene-choose" data-sname="白云山" _id="9" href="javascript:void(0);">白云山</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+                            <li>
+                                <a class="scene-choose" data-sname="古影线" _id="14" href="javascript:void(0);">古影线</a>
+                                <img class="del-scene" alt="清除" src="/themes/itravelfont/image/del.png" style="display:none;cursor:pointer;">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span9">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/33427.jhtml" target="_blank" title="异木棉下的约定">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161208/92581481162715375_140_100.jpg" alt="异木棉下的约定">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/33427.jhtml" target="_blank">
+                                异木棉下的约定
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1003845.dhtml" target="_blank">三毛哥</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-12-08
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (6) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            初冬的广州异木棉怒放，花城披上了盛装，在最美的季节遇上最美的你，...
+                            <a href="/article/yj/33427.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/33342.jhtml" target="_blank" title="2016光棍节，风雨船底顶，我们一起走过">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="2016光棍节，风雨船底顶，我们一起走过">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/33342.jhtml" target="_blank">
+                                2016光棍节，风雨船底顶，我们一起走过
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1002707.dhtml" target="_blank">阳光使者</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-11-26
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (12) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (2) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            传闻北方有一大山，其顶若大船倒扣，故名船底顶。夫船底顶者，高五百丈，山险岭恶，小路崎岖，草木繁茂，蛇兽横行。欲登顶者，须经深谷潺溪，攀峭壁顽石，穿高草密林，觅得正途，逶迤上落，方可成功。稍不慎者，或力不支，或入歧途，或噬于蛇虫，或坠于卵石。...
+                            <a href="/article/yj/33342.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/33341.jhtml" target="_blank" title="20161111船底顶，有你有我">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161121/69981479720250718_140_100.jpg" alt="20161111船底顶，有你有我">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/33341.jhtml" target="_blank">
+                                20161111船底顶，有你有我
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1005044.dhtml" target="_blank">梦蝶</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-11-21
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (193) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (1) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            进入户外三年有余，从一个懵懂不知的小女孩，成长为一个独立自强的女汉纸，只能说，女汉纸都是被逼出来的。船底顶的寓意不必细说，那年，有个人真心实意的带我上去了，可惜当时不能体会登船含义，更可惜的，那时喝的是没煮过的生泉水，第二天一直闹肚子，根本...
+                            <a href="/article/yj/33341.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/33340.jhtml" target="_blank" title="喀拉峻最美草原">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161114/82731479120099500_140_100.JPG" alt="喀拉峻最美草原">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/33340.jhtml" target="_blank">
+                                喀拉峻最美草原
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1025705.dhtml" target="_blank">那背影。。。。。。</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-11-14
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (15) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            阳光吝啬得很大方，草场青绿得很健康；远处那云雾缭绕在雨过的下午还能看见彩虹，有时候运气好的话还能看到两条彩虹，...
+                            <a href="/article/yj/33340.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/33339.jhtml" target="_blank" title="2017年5A级旅游景区指南，不来准后悔！！">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161110/50851478768372984_140_100.jpg" alt="2017年5A级旅游景区指南，不来准后悔！！">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/33339.jhtml" target="_blank">
+                                2017年5A级旅游景区指南，不来准后悔！！
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1018228.dhtml" target="_blank">可乐雨鱼</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-11-10
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (48) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            近期，国家旅游局新增9家5A级旅游景区：新疆自治区伊犁州喀拉峻景区、新疆自治区巴音州和静巴音布鲁克景区、内蒙古自治区满洲里市中俄边境旅游区、安徽省六安市万佛湖景区、河南省安阳市红旗渠·太行大峡谷旅游景区、海南省三亚市蜈支洲岛旅游区、陕西省宝...
+                            <a href="/article/yj/33339.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/33338.jhtml" target="_blank" title="祝贺！新疆喀拉峻景区正式授牌5A景区！">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161108/86411478587774859_140_100.jpg" alt="祝贺！新疆喀拉峻景区正式授牌5A景区！">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/33338.jhtml" target="_blank">
+                                祝贺！新疆喀拉峻景区正式授牌5A景区！
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1018228.dhtml" target="_blank">可乐雨鱼</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-11-08
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (21) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            11月4日上午，国家旅游局局长为新晋5A级旅游景区颁牌，喀拉峻景区正式接过了国家旅游局颁发的5A荣誉牌。喀拉峻景区在2016年1月通过了国家旅游局组织的5A级景区景观质量评审，被作为国家5A级景区预备军的一员；2016年10月被正式批准为国...
+                            <a href="/article/yj/33338.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/33337.jhtml" target="_blank" title="香港港岛径露营徒步">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161105/72811478312481546_140_100.JPG" alt="香港港岛径露营徒步">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/33337.jhtml" target="_blank">
+                                香港港岛径露营徒步
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1003845.dhtml" target="_blank">三毛哥</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-11-04
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (158) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            香港还是那个香港，人也还是那个人，变了的人是我，至从2年前开始的麦径，之后的凤凰径，卫奕信径，香港的四条经典徒步线路我走了3条，就差最短的港岛径了，朝思暮想，辗转反侧，太多的人， 太多的回忆。菩提树下结因果。前尘往事忆心头。一笑一嗔俱枉然，...
+                            <a href="/article/yj/33337.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12076.jhtml" target="_blank" title="长沙石燕湖亲子游，这里充满欢声笑语">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="长沙石燕湖亲子游，这里充满欢声笑语">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12076.jhtml" target="_blank">
+                                长沙石燕湖亲子游，这里充满欢声笑语
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1025478.dhtml" target="_blank">xiya</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-27
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (28) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            一个野性十足的地方，颇有刺激性却很安全，带着宝贝过把小小的“探险”瘾。在大自然的怀抱中，来一场欢乐的趣味运动会，长沙周边亲子游哪里好玩，去石燕湖里带着宝贝们跋山涉水一同修行，留下更多美好难忘的回忆成为彼此人生路上最美的风景。这里鸟语花香，这...
+                            <a href="/article/yj/12076.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12075.jhtml" target="_blank" title="湖南周边旅游，如画湄江风光 ">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="湖南周边旅游，如画湄江风光 ">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12075.jhtml" target="_blank">
+                                湖南周边旅游，如画湄江风光
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1025478.dhtml" target="_blank">xiya</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-26
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (23) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            湄江风景区，位于湖南娄底涟源，又被称为湄江国家地质公园、湄江风景名胜区、湄江旅游区，湄江旅游风景区。娄底湄江风景区交通十分便利，通讯比较发达。娄底涟源湄江国家地质公园的旅游六要素十分完整，整体服务无缺，游人对娄底湄江风景名胜区的服务质量很满...
+                            <a href="/article/yj/12075.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12074.jhtml" target="_blank" title="长沙周边游玩之石燕湖丛林穿越主题乐园            ">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="长沙周边游玩之石燕湖丛林穿越主题乐园            ">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12074.jhtml" target="_blank">
+                                长沙周边游玩之石燕湖丛林穿越主题乐园
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1025478.dhtml" target="_blank">xiya</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-25
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (14) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            我是一个生活在尝试的上班族，和大多数人一样每天呆在办公室和对着电脑，时间久了难免会有一些不适应，一到下班偶尔出去打球放松放松。但是到了周末基本上是宅家里睡觉，很少有外出活动。我本身是喜欢去尝试一些相对刺激有挑战性的项目，在上网时偶然看到长沙...
+                            <a href="/article/yj/12074.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12073.jhtml" target="_blank" title="湖南学生游玩 “爱护环境、爱护和平”活动线路">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="湖南学生游玩 “爱护环境、爱护和平”活动线路">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12073.jhtml" target="_blank">
+                                湖南学生游玩 “爱护环境、爱护和平”活动线路
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1025478.dhtml" target="_blank">xiya</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-24
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (12) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            石燕湖位于长沙、株洲、湘潭三市交汇处，景区占地面积
+                            10平方公里。距长株潭三市10—20公里，它是国家旅游局首批评定的AAAA级旅游景区、湖南省首家野生动物园、湖南百景、湖南省十大水体旅游景区、国内专业的拓展训练基地、群众赛龙舟基地，是长...
+                            <a href="/article/yj/12073.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12057.jhtml" target="_blank" title="天籁雪海，继续前行。">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161020/75061476930113531_140_100.jpg" alt="天籁雪海，继续前行。">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12057.jhtml" target="_blank">
+                                天籁雪海，继续前行。
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1018228.dhtml" target="_blank">可乐雨鱼</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-20
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (28) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            如果这世界上有这么一个地方一面冰川雪岭，一面草原花海一面浩瀚沙漠，一面蜿蜒绿洲火洲与冰山相依雪山与湖泊相映那这里一定就是新疆白衣苍狗，日月轮回千里冰封，万里雪飘入秋后的第一场大雪纷飞至喀拉峻到处一片银装素裹喀拉峻突如其来的大雪添加了松林的色...
+                            <a href="/article/yj/12057.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12056.jhtml" target="_blank" title="游走去北方的南方人">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161019/31011476881993906_140_100.jpg" alt="游走去北方的南方人">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12056.jhtml" target="_blank">
+                                游走去北方的南方人
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/org/orgIndex.jhtml?org_id=1024143" target="_blank">云崖户外</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-19
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (54) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            在前面唠叨几句：本文是云崖户外驴友“迷路人”授权发布。此次旅程时间节点是2016年09月07日广州火车出发，2016年09月25日离开乌鲁木齐，2016年09月28日离开重庆。下面游记正式开始： 这次新疆行出发前阻碍也是蛮多的，一个是订了票...
+                            <a href="/article/yj/12056.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12029.jhtml" target="_blank" title="大手牵小手，湖南亲子乐悠游">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="大手牵小手，湖南亲子乐悠游">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12029.jhtml" target="_blank">
+                                大手牵小手，湖南亲子乐悠游
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1025478.dhtml" target="_blank">xiya</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-17
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (28) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            提倡素质教育的今天，“学霸”似乎不再是衡量goodboy的唯一标杆，怎么能让自家孩子在玩儿中成长，怎么把自家孩子教育成邻居口中的“别人家的好孩子”!来石燕湖亲子游玩吧!让你玩在其中，学在其中，乐在其中!基地介绍 石燕湖风景区是国家旅游局评定...
+                            <a href="/article/yj/12029.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12028.jhtml" target="_blank" title="在那遥远的地方---稻城，亚丁">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161016/79241476588645437_140_100.JPG" alt="在那遥远的地方---稻城，亚丁">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12028.jhtml" target="_blank">
+                                在那遥远的地方---稻城，亚丁
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1003845.dhtml" target="_blank">三毛哥</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-16
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (521) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (20) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (21) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            巴寨星空远，理塘落日圆。都桥秋风冷，亚丁人断肠。国庆的稻城，亚丁之行，对丢了手机的我，失联9天，刻骨铭心，记忆中只剩下藏区遍地的格桑花，满山的牦牛，...
+                            <a href="/article/yj/12028.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12027.jhtml" target="_blank" title="湖南一日游，石燕湖上心飞扬！">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="湖南一日游，石燕湖上心飞扬！">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12027.jhtml" target="_blank">
+                                湖南一日游，石燕湖上心飞扬！
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1025478.dhtml" target="_blank">xiya</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-15
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (22) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            前几天看到一篇文章是这么写的“想去旅行的话，千万别选择湖南，因为这里好玩的地方实在太多了。全省14个州市，每个地方都有超多的景点。”的确，如你要旅行来湖南你会挑花眼不知去向哪个景点。但是湖南景点虽多，具有创造力和创新意识的景区却很少，今天给...
+                            <a href="/article/yj/12027.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12026.jhtml" target="_blank" title="期待下一个与黄金满地的奇妙邂逅。。。。。。">
+                            <img style="width:130px;height:100px;" src="/Content/images/attached/default/default_yj_140_100.jpg" alt="期待下一个与黄金满地的奇妙邂逅。。。。。。">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12026.jhtml" target="_blank">
+                                期待下一个与黄金满地的奇妙邂逅。。。。。。
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/org/orgIndex.jhtml?org_id=1023521" target="_blank">齐天下旅行</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-13
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (18) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            想去南雄看银杏，缘于记忆中一幅《黄金满地》的油画，看着空中飞舞的银杏叶、满地金黄的落英，惊叹落叶也可以如此彰显出生命的热烈。周末，应一帮老友的邀约，自驾赴广东南雄坪田、帽子峰赏银杏。带着无限遐想的启程，不成想天公不作美，仿佛是老天对我们的考...
+                            <a href="/article/yj/12026.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12025.jhtml" target="_blank" title="香港塔门岛 露营海钓小记——在没有手机信号的他乡迷路的经">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20161010/71651476106769640_140_100.png" alt="香港塔门岛 露营海钓小记——在没有手机信号的他乡迷路的经">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12025.jhtml" target="_blank">
+                                香港塔门岛 露营海钓小记——在没有手机信号的他乡迷路的经
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/org/orgIndex.jhtml?org_id=1024143" target="_blank">云崖户外</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-10-10
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (27) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            国庆七天假期本来计划了个粤赣小环线的，临放假前被放飞机，有一点小失落。还好陈同学及时介绍了云崖户外的塔门AA露营。出发前的一两天微信群就特别热闹，一群好玩的人，让人充满期待。2号早上6点多赶到广州东站坐C7055城际火车前往深圳火车站（四点...
+                            <a href="/article/yj/12025.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12024.jhtml" target="_blank" title="愿岁月安好，秋色宜人，风景如画！">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20160929/11051475140989562_140_100.JPG" alt="愿岁月安好，秋色宜人，风景如画！">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12024.jhtml" target="_blank">
+                                愿岁月安好，秋色宜人，风景如画！
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1018227.dhtml" target="_blank">可乐1440648814234</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-09-29
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (82) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (0) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            金秋十月，金风送爽的秋季已经到来。喀拉峻的秋天是一个色彩斑斓的季节，胡杨林等树木展现出壮丽的色彩交融。满山的枫叶红了，红叶深处，雪山，若隐若现，枫叶，红的彻骨。喀拉峻的秋天，虽然没有春季里的勃勃生机，没有二月春风似剪刀的清新浪漫，也无夏季郁...
+                            <a href="/article/yj/12024.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div style="margin-left: 0;margin-top: 5px;">
+                        <a class="" href="/article/yj/12023.jhtml" target="_blank" title="塞上秋陌，岂止的寒风萧瑟,孤影流觞？">
+                            <img style="width:130px;height:100px;" src="/Content/images//attached/image/20160927/3721474969102046_140_100.jpg" alt="塞上秋陌，岂止的寒风萧瑟,孤影流觞？">
+                        </a>
+                    </div>
+                </div>
+                <div class="span9">
+                    <div style="margin-left: -10px;">
+                        <h5 style="margin: 0;">
+                            <a class="middle_title" href="/article/yj/12023.jhtml" target="_blank">
+                                塞上秋陌，岂止的寒风萧瑟,孤影流觞？
+                            </a>
+                        </h5>
+                        <h5 style="margin: 0;">
+                            <small>
+                                作者：
+                                <a href="/personal/space/index/index-1018227.dhtml" target="_blank">可乐1440648814234</a>
+                                <i style="padding: 0 6px;">|</i>更新于：2016-09-27
+                                <i style="padding: 0 6px;"> | </i>浏览<span> (59) </span>
+                                <i style="padding: 0 6px;"> | </i>赞<span> (1) </span>
+                                <i style="padding: 0 6px;"> | </i>评论<span> (0) </span>
+                            </small>
+                        </h5>
+                        <p class="mb5 font12 list_info">
+                            海拔2000米的西天山山脉之上寒风呼啸在了无人烟的山坡上穿行带走温度喀拉峻石灰岩山峰屹立草地酥软,秋草伶仃仿佛万千灵魂在夜空下兀自弹唱对我说着"人类,是不是觉得这里很苦？我们早已习惯任何摧残。"可这里就是让我痴迷痴心不改的喀拉峻即便如此秋风...
+                            <a href="/article/yj/12023.jhtml" target="_blank">[查看详情]</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="list_hr">
+            <div class="clear"></div>
+            <div id="page">
+                <a href="javascript:void(0);" class="p">首页</a>
+                <a class="current" href="javascript:void(0);">1</a>
+                <a class="" href="search-2-time-N-.jhtml">2</a>
+                <a class="" href="search-3-time-N-.jhtml">3</a>
+                <a class="" href="search-4-time-N-.jhtml">4</a>
+                <a class="" href="search-5-time-N-.jhtml">5</a>
+                <a class="" href="search-6-time-N-.jhtml">6</a>
+                <a class="" href="search-7-time-N-.jhtml">7</a>
+                <a class="" href="search-8-time-N-.jhtml">8</a>
+                <a class="" href="search-9-time-N-.jhtml">9</a>
+                <a href="search-2-time-N-.jhtml" class="n">下一页</a>
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin-bottom: 15px;">
+    <div class="row-fluid">
+        <div class="row-fluid">
+            <div style="position: relative;margin-bottom: 30px;">
+                <div class="span6">
+                    <i style="height: 20px;width: 8px;background-color: #1abc9c;position: absolute;margin: 15px 0;"></i>
+                    <h5 style="font-size: 18px;font-weight: 400;font-style: normal;color: #666666;margin-left: 20px;line-height: 30px;">目的地列表</h5>
+                </div>
+                <div class="span6">
+                    <h5 style="font-size: 18px;font-weight: 400;font-style: normal;color: #666666;float: right;">
+                        <a class="ui-flat-buttom" style="background-color: #faa732;" href="/mdd/edit.dhtml">+ 创建新目的地</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="mdd_li">
+            <ul>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/61.jhtml" target="_blank">
+                        小东江
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/19.jhtml" target="_blank">
+                        肇庆羚羊峡
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/20.jhtml" target="_blank">
+                        墨脱
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/21.jhtml" target="_blank">
+                        稻城亚丁
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/28.jhtml" target="_blank">
+                        阳江大树岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/24.jhtml" target="_blank">
+                        虎跳峡
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/25.jhtml" target="_blank">
+                        漓江
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/26.jhtml" target="_blank">
+                        船底顶
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/46.jhtml" target="_blank">
+                        韭菜岭
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/45.jhtml" target="_blank">
+                        九顶山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/49.jhtml" target="_blank">
+                        鳌山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/69.jhtml" target="_blank">
+                        南雄银杏
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/41.jhtml" target="_blank">
+                        汕尾龟龄岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/40.jhtml" target="_blank">
+                        武功山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/39.jhtml" target="_blank">
+                        惠州逍遥谷
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/18.jhtml" target="_blank">
+                        佛冈观音山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/17.jhtml" target="_blank">
+                        黑排角海岸线
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/68.jhtml" target="_blank">
+                        厦门鼓浪屿
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/64.jhtml" target="_blank">
+                        阳朔
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/65.jhtml" target="_blank">
+                        张家界
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/54.jhtml" target="_blank">
+                        珠海庙湾
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/53.jhtml" target="_blank">
+                        黄姚古镇
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/66.jhtml" target="_blank">
+                        凤凰古城
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/11.jhtml" target="_blank">
+                        英西峰林
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/12.jhtml" target="_blank">
+                        从化天堂顶
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/15.jhtml" target="_blank">
+                        深圳东西冲
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/14.jhtml" target="_blank">
+                        古影线
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/55.jhtml" target="_blank">
+                        湘桂古商道
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/42.jhtml" target="_blank">
+                        惠州白云嶂
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/43.jhtml" target="_blank">
+                        惠州大南山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/50.jhtml" target="_blank">
+                        海坨山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/44.jhtml" target="_blank">
+                        增城牛轱樟
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/52.jhtml" target="_blank">
+                        佛顶山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/48.jhtml" target="_blank">
+                        小五台山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/47.jhtml" target="_blank">
+                        扎尕那山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/51.jhtml" target="_blank">
+                        雪岭
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/38.jhtml" target="_blank">
+                        惠州小辣甲岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/37.jhtml" target="_blank">
+                        茂名放鸡岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/5.jhtml" target="_blank">
+                        广州小洲村
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/6.jhtml" target="_blank">
+                        沙面
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/7.jhtml" target="_blank">
+                        牛木线
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/9.jhtml" target="_blank">
+                        白云山
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/10.jhtml" target="_blank">
+                        通天蜡烛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/13.jhtml" target="_blank">
+                        花都
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/23.jhtml" target="_blank">
+                        喀纳斯湖
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/27.jhtml" target="_blank">
+                        广州
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/22.jhtml" target="_blank">
+                        四姑娘山毕棚沟
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/29.jhtml" target="_blank">
+                        珠海荷包岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/30.jhtml" target="_blank">
+                        珠海东澳岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/31.jhtml" target="_blank">
+                        珠海外伶仃岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/1373.jhtml" target="_blank">
+                        古劳水乡
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/34.jhtml" target="_blank">
+                        惠州大甲岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/35.jhtml" target="_blank">
+                        上下川岛
+                    </a>
+                </li>
+                <li style="margin-bottom: 15px;width: 105px;">
+                    <a class="ui-font" style="color: #666666;" href="/mdd/index/36.jhtml" target="_blank">
+                        阳江海陵岛
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 网站尾部 start-->
+<div class="error">
+    <span></span>
+</div>
+<div class="warning">
+    <span></span>
+</div>
+<div class="success">
+    <span></span>
+</div>
+<script type="text/javascript">
+<!--
+//验证不通过，错误提示
+function showError(msg,time){
+	time = time ? time : 3000;
+	var wrap=$(".error");
+	wrap[0].timer&&clearTimeout(wrap[0].timer);
+	wrap.find("span").html("&nbsp;&nbsp;"+msg);
+	wrap.show();
+	wrap[0].timer=setTimeout(function(){
+		wrap.animate({"opacity":"0"},"normal","",function(){
+		   wrap.hide();
+		   wrap.css("opacity","1");
+		});
+	},time);
+}
+function showWarning(msg,time){
+	time = time ? time : 3000;
+	var wrap=$(".warning");
+	wrap[0].timer&&clearTimeout(wrap[0].timer);
+	wrap.find("span").html("&nbsp;&nbsp;"+msg);
+	wrap.show();
+	wrap[0].timer=setTimeout(function(){
+		wrap.animate({"opacity":"0"},"normal","",function(){
+		   wrap.hide();
+		   wrap.css("opacity","1");
+		});
+	},time);
+}
+function showSuccess(msg,time){
+	time = time ? time : 3000;
+	var wrap=$(".success");
+	wrap[0].timer&&clearTimeout(wrap[0].timer);
+	wrap.find("span").html("&nbsp;&nbsp;"+msg);
+	wrap.show();
+	wrap[0].timer=setTimeout(function(){
+		wrap.animate({"opacity":"0"},"normal","",function(){
+		   wrap.hide();
+		   wrap.css("opacity","1");
+		});
+	},time);
+}
+//-->
+</script>
+<div class="row-fluid">
+    <div id="loading" class="modal hide fade in" style="margin:-35px 0 0 -100px;display: none;width: 200px;height: 50px;text-align: center;padding: 10px;">
+        <div class="modal-body" style="max-height: 30px;padding: 10px;">
+            <img style="-webkit-user-select: none" src="/themes/itravelfont/image/loading.gif">
+            提交处理中
+        </div>
+    </div>
+</div>

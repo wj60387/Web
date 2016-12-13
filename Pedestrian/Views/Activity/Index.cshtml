@@ -1,10 +1,1821 @@
 ﻿@{
     ViewBag.Title = "步行者-活动";
 }
-<link href="~/Content/css/index.css" rel="stylesheet" />
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/js/index.js"></script>
-<div id="huodong">
-    <div></div>
-    <div></div>
+<div class="container" style="padding-top: 20px;">
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="" style="background: #f2f2f2;;bottom: 0;left: 0;height: 380px;line-height: 24px;">
+                <!-- 活动检索页面，分类信息栏 start -->
+                <div style="padding: 20px 20px;">
+                    <div class="row-fluid" style="margin-bottom: 60px;">
+                        <script type="text/javascript">
+
+                            $(document).ready(function () {
+                                $('#keyWords').bind('keydown', function (event) {
+                                    if (event.keyCode == "13") {
+                                        //回车执行查询
+                                        $('#searchKeyWord').click();
+                                    }
+                                });
+                            });
+
+                        </script>
+
+                        <div class="input-append">
+                            <input value="" id="keyWords" name="keyWords" style="border: 1px solid #fa7b00;width:70%;height: 30px;font-size: 13px;line-height: 30px;" type="text" placeholder="请输入活动、目的地名称" autocomplete="off">
+                            <buttom id="searchKeyWord" type="buttom" class="add-on" style="text-shadow: 0 0px 0 #ffffff;width: 25%;font-size: 16px;height: 40px;background: #fa7b00;border: none;line-height: 40px;color: #fff;cursor: pointer;padding: 0;cursor: pointer;" value="">搜索</buttom>
+                        </div>
+
+                    </div>
+                    <div style="position: relative;margin-bottom: 20px;">
+                        <i style="height: 16px;width: 4px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 style="font-size: 14px;font-weight: 400;color: #385E77;margin-left: 10px;line-height: 16px;">出发时间</h5>
+                    </div>
+                    <div class="row-fluid" style="margin-bottom: 20px;">
+                        <div class="row-fluid">
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?se_day_type=0" style="float: left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    全部
+                                </a>
+                            </p>
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?se_day_type=now_week" style="float: left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    本周
+                                </a>
+                            </p>
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?se_day_type=next_week" style="float: left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;float: right;">
+                                    下周
+                                </a>
+                            </p>
+                        </div>
+                        <div class="row-fluid">
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?se_day_type=now_month" style="float: left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    本月
+                                </a>
+                            </p>
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?se_day_type=next_month" style="font-size: 12px;display: block;color: #385E77;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    下个月
+                                </a>
+                            </p>
+                            <p class="span4">
+
+                            </p>
+                        </div>
+                    </div>
+                    <div style="position: relative;margin-bottom: 20px;">
+                        <i style="height: 16px;width: 4px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 style="font-size: 14px;font-weight: 400;color: #385E77;margin-left: 10px;line-height: 16px;">活动分类</h5>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="row-fluid">
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?act_category=8" style="float:left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    运动&拉练
+                                </a>
+                            </p>
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?act_category=1" style="float:left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    休闲摄影
+                                </a>
+                            </p>
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?act_category=2" style="float:right;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    登山徒步
+                                </a>
+                            </p>
+                        </div>
+                        <div class="row-fluid">
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?act_category=3" style="float:left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    海岸海岛
+                                </a>
+                            </p>
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?act_category=4" style="float:left;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    长途长假
+                                </a>
+                            </p>
+                            <p class="span4">
+                                <a href="/activity/operation/search.jhtml?act_category=7" style="float:right;font-size: 12px;display: block;color: #385E77;width: 100px;height: 28px;line-height: 30px;border-radius: 6px;text-align: center;">
+                                    出境游
+                                </a>
+                            </p>
+                        </div>
+                        <div class="row-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 活动检索页面，分类信息栏 end -->
+        </div>
+        <div class="span8">
+            <div style="margin-left: -12px;">
+                <div class="changeBox_a1" id="change_4" style="height:380px;width: 100%;padding: 0px;overflow: hidden;">
+                    <a href="/activity/operation/view-5732.jhtml" class="a_bigImg" title="12月31日-1月4日（元旦）张家界森林公+玻璃桥" style="width: 100%;height: 100%;">
+                        <img src="/Content/images/attached/image/20161206/20161206170151_432.png" width="100%" height="100%" alt="" />
+                    </a>
+                    <a href="/activity/operation/view-5731.jhtml" class="a_bigImg" title="（元旦假期）中国名山-黄山行" style="width: 100%;height: 100%;">
+                        <img src="/Content/images/attached/image/20161206/20161206165339_772.png" width="100%" height="100%" alt="" />
+                    </a>
+                    <a href="/article/yj/11802.jhtml" class="a_bigImg" title="拾梦人2016年招商进行中" style="width: 100%;height: 100%;">
+                        <img src="/Content/images/attached/image/20160219/20160219182403_36.png" width="100%" height="100%" alt="" />
+                    </a>
+                    <ul class="ul_change_a1" style="position: relative;float: right;top: 320px;">
+                        <li style="list-style: none;"><a href="#"><img src="/Content/images/attached/image/20161206/20161206170151_432.png" width="67" height="40" alt="" /></a></li>
+                        <li style="list-style: none;"><a href="#"><img src="/Content/images/attached/image/20161206/20161206165339_772.png" width="67" height="40" alt="" /></a></li>
+                        <li style="list-style: none;"><a href="#"><img src="/Content/images/attached/image/20160219/20160219182403_36.png" width="67" height="40" alt="" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 滚动图片及分类导航 end -->
+<!-- 中间内容部分 start -->
+<div class="container" style="padding-top: 20px;">
+
+    <div class="row-fluid" style="margin-top: 30px;">
+        <div class="row-fluid">
+            <div class="span12">
+                <i style="height: 22px;width: 8px;background-color: #1abc9c;position: absolute;"></i>
+                <h5 class="ui-mdd-topic" style="font-size: 20px;text-align: left;margin: 0px;margin-left: 25px;line-height: 22px;">
+                    推荐俱乐部
+                </h5>
+            </div>
+
+        </div>
+
+        <ul class="thumbnails row-fluid" style="margin-bottom: 0px;padding-top: 20px;">
+
+            <li class="span2">
+                <div style="">
+                    <a href="/org/orgIndex.jhtml?org_id=1018881" title="户外家缘" target="_blank">
+                        <img width="100%" style="height: 140px;" src="/Content/images/attached/hot_org/hyjy.jpg" alt="户外家缘">
+                    </a>
+                    <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                        <a href="/org/orgIndex.jhtml?org_id=1018881" target="_blank">
+                            户外家缘
+                        </a>
+                    </p>
+                </div>
+            </li>
+
+
+            <li class="span2">
+                <div style="">
+                    <a href="/org/orgIndex.jhtml?org_id=1003301" title="驴途户外" target="_blank">
+                        <img width="100%" style="height: 140px;" src="/Content/images/attached/hot_org/lthy.jpg" alt="驴途户外">
+                    </a>
+                    <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                        <a href="/org/orgIndex.jhtml?org_id=1003301" target="_blank">
+                            驴途户外
+                        </a>
+                    </p>
+                </div>
+            </li>
+
+
+            <li class="span2">
+                <div style="">
+                    <a href="/org/orgIndex.jhtml?org_id=1022752" title="梁山户外" target="_blank">
+                        <img width="100%" style="height: 140px;" src="/Content/images/attached/hot_org/lshy.jpg" alt="梁山户外">
+                    </a>
+                    <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                        <a href="/org/orgIndex.jhtml?org_id=1022752" target="_blank">
+                            梁山户外
+                        </a>
+                    </p>
+                </div>
+            </li>
+
+
+            <li class="span2">
+                <div style="">
+                    <a href="/org/orgIndex.jhtml?org_id=1000443" title="万里行户外" target="_blank">
+                        <img width="100%" style="height: 140px;" src="/Content/images/attached/hot_org/wlxhy.jpg" alt="万里行户外">
+                    </a>
+                    <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                        <a href="/org/orgIndex.jhtml?org_id=1000443" target="_blank">
+                            万里行户外
+                        </a>
+                    </p>
+                </div>
+            </li>
+
+
+            <li class="span2">
+                <div style="">
+                    <a href="/org/orgIndex.jhtml?org_id=1018004" title="广州旅行吧" target="_blank">
+                        <img width="100%" style="height: 140px;" src="/Content/images/attached/hot_org/gzlxb.jpg" alt="广州旅行吧">
+                    </a>
+                    <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                        <a href="/org/orgIndex.jhtml?org_id=1018004" target="_blank">
+                            广州旅行吧
+                        </a>
+                    </p>
+                </div>
+            </li>
+
+
+            <li class="span2">
+                <div style="">
+                    <a href="/org/orgIndex.jhtml?org_id=1005388" title="舌尖户外" target="_blank">
+                        <img width="100%" style="height: 140px;" src="/Content/images/attached/hot_org/sjhy.jpg" alt="舌尖户外">
+                    </a>
+                    <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                        <a href="/org/orgIndex.jhtml?org_id=1005388" target="_blank">
+                            舌尖户外
+                        </a>
+                    </p>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="row-fluid">
+
+        <!-- 目的地首页，主题分类 start -->
+        <div class="row-fluid" style="padding-top: 20px;">
+
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="span9">
+                        <i style="height: 22px;width: 8px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 class="ui-mdd-topic" style="font-size: 20px;text-align: left;margin: 0px;margin-left: 25px;line-height: 22px;">
+                            运动&拉练
+                        </h5>
+                    </div>
+                    <div class="span3">
+                        <h5 class="ui-mdd-topic" style="text-align: right;margin: 0px;">
+                            <a style="color: #1ABC9C;" href="/activity/operation/search.jhtml?act_category=8">
+                                更多 >
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="padding-top: 20px;">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <div style="margin-bottom: 20px;">
+                                    <a href="/activity/operation/view-4523.jhtml" title="" target="_blank">
+                                        <img style="height:365px;width:240px;" alt="运动&拉练" src="/Content/images/attached/category/act/1.png">
+                                    </a>
+                                    <!--
+                                    <h5 style="margin:30px 0;text-align: left;">
+                                        <a class="middle_title" href="" class="pt" title="" target="_blank">
+                                            休闲摄影
+                                        </a>
+                                    </h5>
+
+                                    <h5 class="ui-mdd-topic" style="text-align: left;">
+                                        小东江水库坐落于湖南省郴州市境内，从广东这边过去交通还算方便。因水库水冷，入夏时早晚间的温差，导致水面总是会起一层雾气，阳光斜射进来宛如仙境一般。小东江的晨雾一直是摄友们
+                                    </h5>
+                                     -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6183.jhtml" title="元旦2期：【冰雪武功山】邂逅南中国最美高山草原—江西武功山" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="元旦2期：【冰雪武功山】邂逅南中国最美高山草原—江西武功山" src="/Content/images/attached/image/20161212/20161212014516_188_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6183.jhtml" class="middle_title" target="_blank">
+                                                        元旦2期：【冰雪武功山】邂逅南中国最美高山草原—江西武功山
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 370
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6180.jhtml" title="元旦2期：高铁团【冰雪南岳】五岳独秀看雾凇，雪域衡山共祈福" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="元旦2期：高铁团【冰雪南岳】五岳独秀看雾凇，雪域衡山共祈福" src="/Content/images/attached/image/20161212/20161212010729_305_470_250.png">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6180.jhtml" class="middle_title" target="_blank">
+                                                        元旦2期：高铁团【冰雪南岳】五岳独秀看雾凇，雪域衡山共祈福
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 1099
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6181.jhtml" title="元旦：汽车团【冰雪南岳】12.31-1.2五岳独秀看雾凇，雪域衡山共祈福" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="元旦：汽车团【冰雪南岳】12.31-1.2五岳独秀看雾凇，雪域衡山共祈福" src="/Content/images/attached/image/20161212/20161212012110_416_470_250.png">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6181.jhtml" class="middle_title" target="_blank">
+                                                        元旦：汽车团【冰雪南岳】12.31-1.2五岳独秀看雾凇，雪域衡山共祈福
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 380
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5709.jhtml" title="【12.30晚-11.02】户外圣地--最美武功山" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【12.30晚-11.02】户外圣地--最美武功山" src="/Content/images/attached/image/20161022/20161022194722_987_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5709.jhtml" class="middle_title" target="_blank">
+                                                        【12.30晚-11.02】户外圣地--最美武功山
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 370
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5742.jhtml" title="【12.18】 云髻山，邂逅枫叶云海" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【12.18】 云髻山，邂逅枫叶云海" src="/Content/images/attached/image/20161212/20161212213807_963_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5742.jhtml" class="middle_title" target="_blank">
+                                                        【12.18】 云髻山，邂逅枫叶云海
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 100
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5265.jhtml" title="【元旦】五岳独秀看雾凇，雪域衡山共祈福" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【元旦】五岳独秀看雾凇，雪域衡山共祈福" src="/Content/images/attached/image/20161012/20161012224445_17_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5265.jhtml" class="middle_title" target="_blank">
+                                                        【元旦】五岳独秀看雾凇，雪域衡山共祈福
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 330
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="span9">
+                        <i style="height: 22px;width: 8px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 class="ui-mdd-topic" style="font-size: 20px;text-align: left;margin: 0px;margin-left: 25px;line-height: 22px;">
+                            休闲摄影
+                        </h5>
+                    </div>
+                    <div class="span3">
+                        <h5 class="ui-mdd-topic" style="text-align: right;margin: 0px;">
+                            <a style="color: #1ABC9C;" href="/activity/operation/search.jhtml?act_category=1">
+                                更多 >
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="padding-top: 20px;">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <div style="margin-bottom: 20px;">
+
+
+                                    <a href="" title="" target="_blank">
+
+                                        <img style="height:365px;width:240px;" alt="休闲摄影" src="/Content/images/attached/category/xxsy.png">
+                                    </a>
+                                    <!--
+                                    <h5 style="margin:30px 0;text-align: left;">
+                                        <a class="middle_title" href="" class="pt" title="" target="_blank">
+                                            休闲摄影
+                                        </a>
+                                    </h5>
+
+                                    <h5 class="ui-mdd-topic" style="text-align: left;">
+                                        小东江水库坐落于湖南省郴州市境内，从广东这边过去交通还算方便。因水库水冷，入夏时早晚间的温差，导致水面总是会起一层雾气，阳光斜射进来宛如仙境一般。小东江的晨雾一直是摄友们
+                                    </h5>
+                                     -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5379.jhtml" title="【​12.18】大南山--穿越珠三角最美高山草原" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【​12.18】大南山--穿越珠三角最美高山草原" src="/Content/images/attached/image/20161212/20161212214353_382_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5379.jhtml" class="middle_title" target="_blank">
+                                                        【​12.18】大南山--穿越珠三角最美高山草原
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 130
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6138.jhtml" title="1月2日周一 从化星溪线赏竹海 感受最美乡村小径" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="1月2日周一 从化星溪线赏竹海 感受最美乡村小径" src="/Content/images/attached/image/20161205/20161205182725_985_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6138.jhtml" class="middle_title" target="_blank">
+                                                        1月2日周一 从化星溪线赏竹海 感受最美乡村小径
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 88
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6137.jhtml" title="1月2日周一 情迷小资较场尾 骑行大美杨梅坑" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="1月2日周一 情迷小资较场尾 骑行大美杨梅坑" src="/Content/images/attached/image/20161205/20161205182153_321_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6137.jhtml" class="middle_title" target="_blank">
+                                                        1月2日周一 情迷小资较场尾 骑行大美杨梅坑
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 118
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-4835.jhtml" title="冰情雪韵-大雪谷穿越-爸爸去哪儿摄影基地摄影天堂魔" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="冰情雪韵-大雪谷穿越-爸爸去哪儿摄影基地摄影天堂魔" src="/Content/images/attached/image/20161012/20161012225943_604_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-4835.jhtml" class="middle_title" target="_blank">
+                                                        冰情雪韵-大雪谷穿越-爸爸去哪儿摄影基地摄影天堂魔
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月01日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 2680
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6091.jhtml" title="12月17日（周六）广东香格里拉——云髻山登山" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="12月17日（周六）广东香格里拉——云髻山登山" src="/Content/images/attached/image/20161130/20161130192100_164_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6091.jhtml" class="middle_title" target="_blank">
+                                                        12月17日（周六）广东香格里拉——云髻山登山
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月17日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 90
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6143.jhtml" title="确定出发，12.16周五晚出发|相聚漓江" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="确定出发，12.16周五晚出发|相聚漓江" src="/Content/images/attached/image/20161205/20161205232845_923_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6143.jhtml" class="middle_title" target="_blank">
+                                                        确定出发，12.16周五晚出发|相聚漓江
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月16日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 269
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="span9">
+                        <i style="height: 22px;width: 8px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 class="ui-mdd-topic" style="font-size: 20px;text-align: left;margin: 0px;margin-left: 25px;line-height: 22px;">
+                            登山徒步
+                        </h5>
+                    </div>
+                    <div class="span3">
+                        <h5 class="ui-mdd-topic" style="text-align: right;margin: 0px;">
+                            <a style="color: #1ABC9C;" href="/activity/operation/search.jhtml?act_category=2">
+                                更多 >
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="padding-top: 20px;">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <div style="margin-bottom: 20px;">
+
+
+                                    <a href="" title="" target="_blank">
+
+                                        <img style="height:365px;width:240px;" alt="登山徒步" src="/Content/images/attached/category/dstb.png">
+                                    </a>
+                                    <!--
+                                    <h5 style="margin:30px 0;text-align: left;">
+                                        <a class="middle_title" href="" class="pt" title="" target="_blank">
+                                            休闲摄影
+                                        </a>
+                                    </h5>
+
+                                    <h5 class="ui-mdd-topic" style="text-align: left;">
+                                        小东江水库坐落于湖南省郴州市境内，从广东这边过去交通还算方便。因水库水冷，入夏时早晚间的温差，导致水面总是会起一层雾气，阳光斜射进来宛如仙境一般。小东江的晨雾一直是摄友们
+                                    </h5>
+                                     -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6191.jhtml" title="【广东第一峰】1.1-1.2问鼎广东之巅-石坑崆，赏日出日落璀璨星" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【广东第一峰】1.1-1.2问鼎广东之巅-石坑崆，赏日出日落璀璨星" src="/Content/images/attached/image/20160616/20160616162049_4_470_250.png">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6191.jhtml" class="middle_title" target="_blank">
+                                                        【广东第一峰】1.1-1.2问鼎广东之巅-石坑崆，赏日出日落璀璨星
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 350
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6190.jhtml" title="【珠三角第一高峰】12.18问鼎云髻山之巅，邂逅赏枫圣地" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【珠三角第一高峰】12.18问鼎云髻山之巅，邂逅赏枫圣地" src="/Content/images/attached/image/20161201/20161201173728_125_470_250.png">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6190.jhtml" class="middle_title" target="_blank">
+                                                        【珠三角第一高峰】12.18问鼎云髻山之巅，邂逅赏枫圣地
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 100
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6136.jhtml" title="1月2日周一 勇登从化第二峰 鸡枕山一鸣惊人" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="1月2日周一 勇登从化第二峰 鸡枕山一鸣惊人" src="/Content/images/attached/image/20161205/20161205181223_662_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6136.jhtml" class="middle_title" target="_blank">
+                                                        1月2日周一 勇登从化第二峰 鸡枕山一鸣惊人
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 88
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6135.jhtml" title="1月2日周一 登第三峰黄茶园 揽胜溪头村秘境" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="1月2日周一 登第三峰黄茶园 揽胜溪头村秘境" src="/Content/images/attached/image/20161205/20161205180639_737_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6135.jhtml" class="middle_title" target="_blank">
+                                                        1月2日周一 登第三峰黄茶园 揽胜溪头村秘境
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 88
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6155.jhtml" title="【二期·雪之梦】五岳独秀看雾凇，雪域衡山共祈福" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【二期·雪之梦】五岳独秀看雾凇，雪域衡山共祈福" src="/Content/images/attached/image/20161208/20161208124640_636_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6155.jhtml" class="middle_title" target="_blank">
+                                                        【二期·雪之梦】五岳独秀看雾凇，雪域衡山共祈福
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月06日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 330
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6156.jhtml" title="【二期·雪之梦】五岳独秀看雾凇，雪域衡山共祈福" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【二期·雪之梦】五岳独秀看雾凇，雪域衡山共祈福" src="/Content/images/attached/image/20161208/20161208124640_636_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6156.jhtml" class="middle_title" target="_blank">
+                                                        【二期·雪之梦】五岳独秀看雾凇，雪域衡山共祈福
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月13日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 330
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="span9">
+                        <i style="height: 22px;width: 8px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 class="ui-mdd-topic" style="font-size: 20px;text-align: left;margin: 0px;margin-left: 25px;line-height: 22px;">
+                            海岸海岛
+                        </h5>
+                    </div>
+                    <div class="span3">
+                        <h5 class="ui-mdd-topic" style="text-align: right;margin: 0px;">
+                            <a style="color: #1ABC9C;" href="/activity/operation/search.jhtml?act_category=3">
+                                更多 >
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="padding-top: 20px;">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <div style="margin-bottom: 20px;">
+
+
+                                    <a href="" title="" target="_blank">
+
+                                        <img style="height:365px;width:240px;" alt="海岸海岛" src="/Content/images/attached/category/hdha.png">
+                                    </a>
+                                    <!--
+                                    <h5 style="margin:30px 0;text-align: left;">
+                                        <a class="middle_title" href="" class="pt" title="" target="_blank">
+                                            休闲摄影
+                                        </a>
+                                    </h5>
+
+                                    <h5 class="ui-mdd-topic" style="text-align: left;">
+                                        小东江水库坐落于湖南省郴州市境内，从广东这边过去交通还算方便。因水库水冷，入夏时早晚间的温差，导致水面总是会起一层雾气，阳光斜射进来宛如仙境一般。小东江的晨雾一直是摄友们
+                                    </h5>
+                                     -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6194.jhtml" title="【海螺角拾贝】12.18穿越海螺角---捡海螺，赏巨石阵，最美浅海戏水" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【海螺角拾贝】12.18穿越海螺角---捡海螺，赏巨石阵，最美浅海戏水" src="/Content/images/attached/image/20160517/20160517193615_399_470_250.png">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6194.jhtml" class="middle_title" target="_blank">
+                                                        【海螺角拾贝】12.18穿越海螺角---捡海螺，赏巨石阵，最美浅海戏水
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 99
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6119.jhtml" title="1月1日周日 那琴半岛海岸穿越，寻觅那琴那海那湾" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="1月1日周日 那琴半岛海岸穿越，寻觅那琴那海那湾" src="/Content/images/attached/image/20161202/20161202204641_962_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6119.jhtml" class="middle_title" target="_blank">
+                                                        1月1日周日 那琴半岛海岸穿越，寻觅那琴那海那湾
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月01日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 108
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6120.jhtml" title="1月1日周日 徒步惠东黑排角 穿越海岸赏浪花" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="1月1日周日 徒步惠东黑排角 穿越海岸赏浪花" src="/Content/images/attached/image/20161202/20161202213901_896_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6120.jhtml" class="middle_title" target="_blank">
+                                                        1月1日周日 徒步惠东黑排角 穿越海岸赏浪花
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月01日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 108
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6130.jhtml" title="1月1日周日 漫步深圳盐田栈道 聆听海的声音" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="1月1日周日 漫步深圳盐田栈道 聆听海的声音" src="/Content/images/attached/image/20161205/20161205153410_21_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6130.jhtml" class="middle_title" target="_blank">
+                                                        1月1日周日 漫步深圳盐田栈道 聆听海的声音
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月01日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 98
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5785.jhtml" title="【徒步节】行走飞沙滩海岸线，穿越高栏港风车山" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【徒步节】行走飞沙滩海岸线，穿越高栏港风车山" src="/Content/images/attached/image/20161212/20161212115157_842_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5785.jhtml" class="middle_title" target="_blank">
+                                                        【徒步节】行走飞沙滩海岸线，穿越高栏港风车山
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月18日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 109
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6161.jhtml" title="【年终回馈】徒步盐田海滨栈道,摄最美海景" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="【年终回馈】徒步盐田海滨栈道,摄最美海景" src="/Content/images/attached/image/20161209/20161209145427_555_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6161.jhtml" class="middle_title" target="_blank">
+                                                        【年终回馈】徒步盐田海滨栈道,摄最美海景
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月18日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 78
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="span9">
+                        <i style="height: 22px;width: 8px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 class="ui-mdd-topic" style="font-size: 20px;text-align: left;margin: 0px;margin-left: 25px;line-height: 22px;">
+                            长途长假
+                        </h5>
+                    </div>
+                    <div class="span3">
+                        <h5 class="ui-mdd-topic" style="text-align: right;margin: 0px;">
+                            <a style="color: #1ABC9C;" href="/activity/operation/search.jhtml?act_category=4">
+                                更多 >
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="padding-top: 20px;">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <div style="margin-bottom: 20px;">
+
+
+                                    <a href="" title="" target="_blank">
+
+                                        <img style="height:365px;width:240px;" alt="长途长假" src="/Content/images/attached/category/ctcj.png">
+                                    </a>
+                                    <!--
+                                    <h5 style="margin:30px 0;text-align: left;">
+                                        <a class="middle_title" href="" class="pt" title="" target="_blank">
+                                            休闲摄影
+                                        </a>
+                                    </h5>
+
+                                    <h5 class="ui-mdd-topic" style="text-align: left;">
+                                        小东江水库坐落于湖南省郴州市境内，从广东这边过去交通还算方便。因水库水冷，入夏时早晚间的温差，导致水面总是会起一层雾气，阳光斜射进来宛如仙境一般。小东江的晨雾一直是摄友们
+                                    </h5>
+                                     -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5676.jhtml" title="已成行5期〖亲子冬令营〗2017年寒假--哈尔滨冰雪大世界、雪乡户外徒步、滑雪" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="已成行5期〖亲子冬令营〗2017年寒假--哈尔滨冰雪大世界、雪乡户外徒步、滑雪" src="/Content/images/attached/image/20161018/20161018190456_494_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5676.jhtml" class="middle_title" target="_blank">
+                                                        已成行5期〖亲子冬令营〗2017年寒假--哈尔滨冰雪大世界、雪乡户外徒步、滑雪
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月28日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 2480
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5674.jhtml" title="已成行〖东北7天〗2016-2017---哈尔滨冰灯，雪乡穿越，魔界，长白山温泉" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="已成行〖东北7天〗2016-2017---哈尔滨冰灯，雪乡穿越，魔界，长白山温泉" src="/Content/images/attached/image/20161018/20161018183829_456_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5674.jhtml" class="middle_title" target="_blank">
+                                                        已成行〖东北7天〗2016-2017---哈尔滨冰灯，雪乡穿越，魔界，长白山温泉
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            02月20日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 2080
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-5675.jhtml" title="已成行10期〖东北5天〗哈尔滨冰灯，大雪谷穿越，亚布力滑雪五日游A线" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="已成行10期〖东北5天〗哈尔滨冰灯，大雪谷穿越，亚布力滑雪五日游A线" src="/Content/images/attached/image/20161018/20161018185720_649_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-5675.jhtml" class="middle_title" target="_blank">
+                                                        已成行10期〖东北5天〗哈尔滨冰灯，大雪谷穿越，亚布力滑雪五日游A线
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月01日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 1680
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6108.jhtml" title="雾凇岛、长白山、魔界、老里克湖、雪乡雪谷6天多期" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="雾凇岛、长白山、魔界、老里克湖、雪乡雪谷6天多期" src="/Content/images/attached/image/20161202/20161202174712_783_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6108.jhtml" class="middle_title" target="_blank">
+                                                        雾凇岛、长白山、魔界、老里克湖、雪乡雪谷6天多期
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月15日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 1880
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6187.jhtml" title="哈尔滨-亚布力滑雪-大秃顶子山穿越-雪乡-镜泊湖-长白山+温泉-雾凇岛 7天" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="哈尔滨-亚布力滑雪-大秃顶子山穿越-雪乡-镜泊湖-长白山+温泉-雾凇岛 7天" src="/Content/images/attached/image/20161212/20161212154103_550_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6187.jhtml" class="middle_title" target="_blank">
+                                                        哈尔滨-亚布力滑雪-大秃顶子山穿越-雪乡-镜泊湖-长白山+温泉-雾凇岛 7天
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月25日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 2880
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-3139.jhtml" title="哈雪梦境亲子户外纯玩5天多期 含广州往返机票" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="哈雪梦境亲子户外纯玩5天多期 含广州往返机票" src="/Content/images/attached/image/20160121/20160121141736_12_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-3139.jhtml" class="middle_title" target="_blank">
+                                                        哈雪梦境亲子户外纯玩5天多期 含广州往返机票
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月28日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 6988
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="span9">
+                        <i style="height: 22px;width: 8px;background-color: #1abc9c;position: absolute;"></i>
+                        <h5 class="ui-mdd-topic" style="font-size: 20px;text-align: left;margin: 0px;margin-left: 25px;line-height: 22px;">
+                            出境游
+                        </h5>
+                    </div>
+                    <div class="span3">
+                        <h5 class="ui-mdd-topic" style="text-align: right;margin: 0px;">
+                            <a style="color: #1ABC9C;" href="/activity/operation/search.jhtml?act_category=7">
+                                更多 >
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row-fluid" style="padding-top: 20px;">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div class="row-fluid">
+                                <div style="margin-bottom: 20px;">
+
+
+                                    <a href="" title="" target="_blank">
+
+                                        <img style="height:365px;width:240px;" alt="出境游" src="/Content/images/attached/category/cjy.png">
+                                    </a>
+                                    <!--
+                                    <h5 style="margin:30px 0;text-align: left;">
+                                        <a class="middle_title" href="" class="pt" title="" target="_blank">
+                                            休闲摄影
+                                        </a>
+                                    </h5>
+
+                                    <h5 class="ui-mdd-topic" style="text-align: left;">
+                                        小东江水库坐落于湖南省郴州市境内，从广东这边过去交通还算方便。因水库水冷，入夏时早晚间的温差，导致水面总是会起一层雾气，阳光斜射进来宛如仙境一般。小东江的晨雾一直是摄友们
+                                    </h5>
+                                     -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6110.jhtml" title="贝加尔湖+奥利洪岛冰雪童话8天深度之旅多期" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="贝加尔湖+奥利洪岛冰雪童话8天深度之旅多期" src="/Content/images/attached/image/20161202/20161202180936_722_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6110.jhtml" class="middle_title" target="_blank">
+                                                        贝加尔湖+奥利洪岛冰雪童话8天深度之旅多期
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月07日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 4999
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-6111.jhtml" title="贝加尔湖梦幻蓝冰、奇观雾凇、童话世界之旅8天多期" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="贝加尔湖梦幻蓝冰、奇观雾凇、童话世界之旅8天多期" src="/Content/images/attached/image/20161202/20161202181659_662_470_250.png">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-6111.jhtml" class="middle_title" target="_blank">
+                                                        贝加尔湖梦幻蓝冰、奇观雾凇、童话世界之旅8天多期
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            12月07日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 4399
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-2335.jhtml" title="斯里兰卡6天5晚精华定制行程8期" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="斯里兰卡6天5晚精华定制行程8期" src="/Content/images/attached/image/20151223/20151223162421_927_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-2335.jhtml" class="middle_title" target="_blank">
+                                                        斯里兰卡6天5晚精华定制行程8期
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月24日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 8998
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-3578.jhtml" title="下龙湾、吉婆岛、河内高铁5天1月4期" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="下龙湾、吉婆岛、河内高铁5天1月4期" src="/Content/images/attached/image/20160106/20160106224721_27_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-3578.jhtml" class="middle_title" target="_blank">
+                                                        下龙湾、吉婆岛、河内高铁5天1月4期
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月23日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 2780
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-1481.jhtml" title="春节泰非凡 泰国曼谷、芭提雅6天广州往返无自费" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="春节泰非凡 泰国曼谷、芭提雅6天广州往返无自费" src="/Content/images/attached/image/20160104/20160104200225_762_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-1481.jhtml" class="middle_title" target="_blank">
+                                                        春节泰非凡 泰国曼谷、芭提雅6天广州往返无自费
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            01月25日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 4888
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="span4">
+                                    <div style="margin-left: 2px;margin-bottom: 20px;">
+                                        <a href="/activity/operation/view-3580.jhtml" title="泰国曼谷·芭堤雅六日游天天出发（广州直飞）" target="_blank">
+                                            <img style="height:172px;width:100%;" alt="泰国曼谷·芭堤雅六日游天天出发（广州直飞）" src="/Content/images/attached/image/20151225/20151225224049_719_470_250.jpg">
+                                            <div class="ui-float-pic-bottom-title-price">
+                                                <h5 class="ui-act-title">
+                                                    <a href="/activity/operation/view-3580.jhtml" class="middle_title" target="_blank">
+                                                        泰国曼谷·芭堤雅六日游天天出发（广州直飞）
+                                                    </a>
+                                                </h5>
+                                                <h5 class="row-fluid ui-act-time-cost">
+                                                    <div style="padding: 0 30px;height: 25px;">
+                                                        <font class="span6" style="color: #999999;">
+                                                            02月02日出发
+                                                        </font>
+                                                        <font class="span6" style="color: #FF5741;">
+                                                            ¥ 2488
+                                                        </font>
+                                                    </div>
+                                                </h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- 目的地首页，主题分类 end -->
+
+    </div>
+
+
+    <!-- 地区约伴组织 start -->
+    <!--
+    <div class="row-fluid"  style="margin-top: 30px;">
+        <div class="row-fluid" style="margin-top: 0px;position:relative;height: 38px;border-bottom: 1px solid #eeeeee;">
+            <h3 class="span10 fontYaHei" style="margin-bottom: 30px;line-height: 25px;font-size: 16px;font-weight: normal;font-style: normal;text-decoration: none;color: #008000;">
+                约伴俱乐部<font color="#cccccc" size="2" style="margin-left: 200px;">专业的活动组织，才能够保障活动的安全顺利进行</font>
+            </h3>
+            -->
+    <!--
+    <a class="span2" style="text-align: right;float: right; margin: 10px 0 10px 0;position:relative" href="/activity/operation/synSearch.jhtml?act_type=A">
+        <div style="position:absolute; bottom:5px;margin-left: 60px;">
+            申请组织
+            <span class="arrow right-arrow" ></span>
+        </div>
+    </a>
+    -->
+    <!--
+        </div>
+
+        <ul class="thumbnails row-fluid" style="margin-bottom: 0px;margin-left: -20px;">
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://gzhw.shimengren.com/org/orgIndex.jhtml?org_id=685" title="星期八户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20141111/20141111222422_688_100_100.jpg" alt="星期八户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://gzhw.shimengren.com/org/orgIndex.jhtml?org_id=685" target="_blank">
+                                星期八户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://hdl.shimengren.com/org/orgIndex.jhtml?org_id=1005513" title="爱旅途" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150228/20150228010954_57_100_100.jpg" alt="爱旅途">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://hdl.shimengren.com/org/orgIndex.jhtml?org_id=1005513" target="_blank">
+                                爱旅途
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://zls.shimengren.com/org/orgIndex.jhtml?org_id=16" title="在路上户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20140508/20140508113646_349_100_100.jpg" alt="在路上户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://zls.shimengren.com/org/orgIndex.jhtml?org_id=16" target="_blank">
+                                在路上户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://cm.shimengren.com/org/orgIndex.jhtml?org_id=32" title="两人行草帽登山队" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160111/20160111231812_257_100_100.jpg" alt="两人行草帽登山队">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://cm.shimengren.com/org/orgIndex.jhtml?org_id=32" target="_blank">
+                                两人行草帽登山队
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://mengxingzhe.shimengren.com/org/orgIndex.jhtml?org_id=1006878" title="梦行者户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20141202/20141202140131_845_100_100.jpg" alt="梦行者户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://mengxingzhe.shimengren.com/org/orgIndex.jhtml?org_id=1006878" target="_blank">
+                                梦行者户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://tianqu.shimengren.com/org/orgIndex.jhtml?org_id=1006161" title="添趣旅行" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160825/20160825115024_46_100_100.jpg" alt="添趣旅行">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://tianqu.shimengren.com/org/orgIndex.jhtml?org_id=1006161" target="_blank">
+                                添趣旅行
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                    </ul>
+                    <ul class="thumbnails" style="margin-bottom: 0px;margin-left: -20px;">
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://yuan.shimengren.com/org/orgIndex.jhtml?org_id=1003321" title="缘在路上" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20140814/20140814171016_541_100_100.gif" alt="缘在路上">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://yuan.shimengren.com/org/orgIndex.jhtml?org_id=1003321" target="_blank">
+                                缘在路上
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1024143" title="云崖户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160514/20160514154745_587_100_100.jpg" alt="云崖户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1024143" target="_blank">
+                                云崖户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1018004" title="广州旅行吧户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150820/20150820130954_887_100_100.jpg" alt="广州旅行吧户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1018004" target="_blank">
+                                广州旅行吧户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1003301" title="驴途户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150724/20150724123048_257_100_100.jpg" alt="驴途户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1003301" target="_blank">
+                                驴途户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1023521" title="齐天下旅行" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160401/20160401085909_732_100_100.gif" alt="齐天下旅行">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1023521" target="_blank">
+                                齐天下旅行
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1014103" title="巅峰户外俱乐部" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160214/20160214231118_695_100_100.jpg" alt="巅峰户外俱乐部">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1014103" target="_blank">
+                                巅峰户外俱乐部
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                    </ul>
+                    <ul class="thumbnails" style="margin-bottom: 0px;margin-left: -20px;">
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1000443" title="万里行户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160302/20160302161912_919_100_100.jpg" alt="万里行户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1000443" target="_blank">
+                                万里行户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="http://sj.shimengren.com/org/orgIndex.jhtml?org_id=1005388" title="广州两人行户外旅行" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160406/20160406220648_657_100_100.jpg" alt="广州两人行户外旅行">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="http://sj.shimengren.com/org/orgIndex.jhtml?org_id=1005388" target="_blank">
+                                广州两人行户外旅行
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1018881" title="户外家缘" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150920/20150920231634_164_100_100.jpg" alt="户外家缘">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1018881" target="_blank">
+                                户外家缘
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1022752" title="梁山户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160226/20160226000054_896_100_100.jpg" alt="梁山户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1022752" target="_blank">
+                                梁山户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1022652" title="广州山友集中营" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160217/20160217172536_728_100_100.jpg" alt="广州山友集中营">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1022652" target="_blank">
+                                广州山友集中营
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1025651" title="广州1778户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20161103/20161103182908_655_100_100.jpg" alt="广州1778户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1025651" target="_blank">
+                                广州1778户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                    </ul>
+                    <ul class="thumbnails" style="margin-bottom: 0px;margin-left: -20px;">
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1008222" title="广州小毛驴户外俱乐部" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150412/20150412161319_322_100_100.png" alt="广州小毛驴户外俱乐部">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1008222" target="_blank">
+                                广州小毛驴户外俱乐部
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1010971" title="一起旅行户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150615/20150615181918_756_100_100.jpg" alt="一起旅行户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1010971" target="_blank">
+                                一起旅行户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1017186" title="友爱假期" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150720/20150720112442_994_100_100.jpg" alt="友爱假期">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1017186" target="_blank">
+                                友爱假期
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1010092" title="柠檬and罂粟寻梦户外" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20150428/20150428152148_497_100_100.jpg" alt="柠檬and罂粟寻梦户外">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1010092" target="_blank">
+                                柠檬and罂粟寻梦户外
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1010050" title="微足" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160812/20160812164914_883_100_100.jpg" alt="微足">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1010050" target="_blank">
+                                微足
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="span2">
+                    <div style="margin-bottom: 20px;margin-left: 20px;">
+                        <a href="/org/orgIndex.jhtml?org_id=1022373" title="广州粤驴行户外俱乐部" target="_blank">
+                            <img width="100%" style="height: 130px;" src="/Content/images/attached/image/20160121/20160121111406_561_100_100.png" alt="广州粤驴行户外俱乐部">
+                        </a>
+                        <p class="font12" style="margin-top: 20px;text-align: center;width: 100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align: center;">
+                            <a href="/org/orgIndex.jhtml?org_id=1022373" target="_blank">
+                                广州粤驴行户外俱乐部
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                    </ul>
+                    <ul class="thumbnails" style="margin-bottom: 0px;margin-left: -20px;">
+        </ul>
+
+    </div>	-->
+    <!-- 地区约伴组织 end -->
+
+
+</div>
+<!-- 中间内容部分 end -->
+<!-- 网站尾部 start-->
+<div class="error">
+    <span></span>
+</div>
+<div class="warning">
+    <span></span>
+</div>
+<div class="success">
+    <span></span>
+</div>
+<script type="text/javascript">
+<!--
+//验证不通过，错误提示
+function showError(msg,time){
+	time = time ? time : 3000;
+	var wrap=$(".error");
+	wrap[0].timer&&clearTimeout(wrap[0].timer);
+	wrap.find("span").html("&nbsp;&nbsp;"+msg);
+	wrap.show();
+	wrap[0].timer=setTimeout(function(){
+		wrap.animate({"opacity":"0"},"normal","",function(){
+		   wrap.hide();
+		   wrap.css("opacity","1");
+		});
+	},time);
+}
+function showWarning(msg,time){
+	time = time ? time : 3000;
+	var wrap=$(".warning");
+	wrap[0].timer&&clearTimeout(wrap[0].timer);
+	wrap.find("span").html("&nbsp;&nbsp;"+msg);
+	wrap.show();
+	wrap[0].timer=setTimeout(function(){
+		wrap.animate({"opacity":"0"},"normal","",function(){
+		   wrap.hide();
+		   wrap.css("opacity","1");
+		});
+	},time);
+}
+function showSuccess(msg,time){
+	time = time ? time : 3000;
+	var wrap=$(".success");
+	wrap[0].timer&&clearTimeout(wrap[0].timer);
+	wrap.find("span").html("&nbsp;&nbsp;"+msg);
+	wrap.show();
+	wrap[0].timer=setTimeout(function(){
+		wrap.animate({"opacity":"0"},"normal","",function(){
+		   wrap.hide();
+		   wrap.css("opacity","1");
+		});
+	},time);
+}
+//-->
+</script>
+<div class="row-fluid">
+    <div id="loading" class="modal hide fade in" style="margin:-35px 0 0 -100px;display: none;width: 200px;height: 50px;text-align: center;padding: 10px;">
+        <div class="modal-body" style="max-height: 30px;padding: 10px;">
+            <img style="-webkit-user-select: none" src="/themes/itravelfont/image/loading.gif">
+            提交处理中
+        </div>
+    </div>
 </div>
