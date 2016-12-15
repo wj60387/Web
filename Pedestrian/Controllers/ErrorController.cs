@@ -7,12 +7,11 @@ using System.Web.Mvc;
 
 namespace Pedestrian.Controllers
 {
-    //[ErrorPageAttribute]
-    public class HomeController : Controller
+    public class ErrorController : Controller
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Error");
         }
 
         

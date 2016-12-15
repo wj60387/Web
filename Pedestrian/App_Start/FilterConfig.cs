@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Pedestrian.Filters;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Pedestrian
@@ -7,6 +8,7 @@ namespace Pedestrian
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            // filters.Add(new AppHandleErrorAttribute());
             filters.Add(new HandleErrorAttribute());
         }
     }

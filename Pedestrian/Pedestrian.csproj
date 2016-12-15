@@ -161,9 +161,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ActivityController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\ActionFilterAttribute.cs" />
     <Compile Include="Filters\UserAuthorizeAttribute.cs" />
+    <Compile Include="Filters\AppHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\init.css" />
+    <Content Include="Content\css\reset.css" />
     <Content Include="Content\images\1.png" />
     <Content Include="Content\images\2.png" />
     <Content Include="Content\images\3.png" />
@@ -328,6 +331,7 @@
     <Content Include="Content\images\logo2.png" />
     <Content Include="Content\images\logo3.png" />
     <Content Include="Content\images\shimengren_app.png" />
+    <Content Include="Content\images\timg.png" />
     <Content Include="Content\images\_logo.png" />
     <Content Include="js\common.js" />
     <Content Include="js\custom_plugins\jquery.imgbox.js" />
