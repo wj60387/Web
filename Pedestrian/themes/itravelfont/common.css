@@ -691,7 +691,12 @@ border-radius: 5px;
 width: 100%; height: 320px;}
 
 /*回到头部*/
-.uptotop{position: fixed;display: block;left: 1160px;bottom: 60px;
+.uptotop{
+    position: fixed;
+    display: block;
+    /*left: 1160px;*/
+    right:64px;
+    bottom: 60px;
 background: #37a19e url(image/gotop.gif) no-repeat -52px 0;
 width: 52px;
 height: 52px;

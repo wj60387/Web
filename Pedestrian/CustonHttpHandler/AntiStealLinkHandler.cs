@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -15,12 +16,14 @@ namespace System.Web
         {
             context.Response.Expires = 0;
             context.Response.Clear();
-            context.Response.ContentType = "image/jpg";
-            if (context.Request.UrlReferrer!=null&&context.Request.UrlReferrer.Host == "localhost")
+            context.Response.ContentType = "image/jpeg";
+            if (context.Request.UrlReferrer!=null&&!string.IsNullOrEmpty(context.Request.UrlReferrer.Host))
             {
-                context.Response.WriteFile(context.Request.PhysicalPath);
-                context.Response.End();
-                 
+                if (File.Exists(context.Request.PhysicalPath))
+                {
+                    context.Response.WriteFile(context.Request.PhysicalPath);
+                    context.Response.End();
+                }
                 return;
             }
             context.Response.ContentType = "text/plain";
