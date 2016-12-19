@@ -18,24 +18,23 @@ namespace Pedestrian
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            Exception exception = Server.GetLastError();
-            HttpException httpException = exception as HttpException;
-            RouteData routeData = new RouteData();
-            routeData.Values.Add("controller", "Error");
-
-            switch (httpException.GetHttpCode())
-            {
-                case 404:
-                    routeData.Values.Add("action", "Index");
-                    break;
-            }
-            Response.Clear();
-            Server.ClearError();
-            Response.TrySkipIisCustomErrors = true;
-            IController errorController = new ErrorController();
-            errorController.Execute(new RequestContext(new HttpContextWrapper(Context), routeData));
-        }
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //    Exception exception = Server.GetLastError();
+        //    HttpException httpException = exception as HttpException;
+        //    RouteData routeData = new RouteData();
+        //    routeData.Values.Add("controller", "Error");
+        //    switch (httpException.GetHttpCode())
+        //    {
+        //        case 404:
+        //            routeData.Values.Add("action", "Index");
+        //            break;
+        //    }
+        //    Response.Clear();
+        //    Server.ClearError();
+        //    Response.TrySkipIisCustomErrors = true;
+        //    IController errorController = new ErrorController();
+        //    errorController.Execute(new RequestContext(new HttpContextWrapper(Context), routeData));
+        //}
     }
 }

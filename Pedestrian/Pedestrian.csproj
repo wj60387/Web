@@ -163,6 +163,8 @@
     <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustonHttpHandler\AntiStealLinkHandler.cs" />
+    <Compile Include="CustonHttpHandler\JhtmlHandler.cs" />
     <Compile Include="Filters\ActionFilterAttribute.cs" />
     <Compile Include="Filters\UserAuthorizeAttribute.cs" />
     <Compile Include="Filters\AppHandleErrorAttribute.cs" />
