@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Pedestrian.Filters
 {
@@ -18,7 +19,17 @@ namespace Pedestrian.Filters
         }
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            
+
+        }
+
+    }
+    public class AuthenticationAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (filterContext.HttpContext.Session["username"] == null)
+                filterContext.Result = new RedirectToRouteResult("Login", new RouteValueDictionary { { "from", filterContext.HttpContext.Request.Url.ToString() } });
+            base.OnActionExecuting(filterContext);
         }
     }
 }

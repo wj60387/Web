@@ -75,7 +75,6 @@ namespace WebHelper
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            var date=Int32ToDateSafe(20151209);
             //foreach (var url in txtPicUrl.Lines)
             //{
             //    SaveAsWebImg(url, @"www.shimengren.com/FileServer",@"D:\WorkSpace\VS2010\Web\Pedestrian\Pedestrian\Content\images");
@@ -83,22 +82,6 @@ namespace WebHelper
             //MessageBox.Show("下载完毕");
             var d = DateTime.MaxValue;
         }
-        public static DateTime Int32ToDateSafe(int date)
-        {
-            if (date <= 0 || date > 99999999)
-                return DateTime.MaxValue;
-
-            int y = date / 10000;
-            int m = date % 10000 / 100;
-            int d = date % 100;
-
-            if (m > 12) return DateTime.MaxValue;
-
-            DateTime nDate = new DateTime(y, m , 1).AddMonths(1).AddDays(-1);
-            if (nDate.Day < d)
-                return DateTime.MaxValue;
-
-            return nDate.AddDays(d - nDate.Day);
-        }
+        
     }
 }

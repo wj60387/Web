@@ -163,6 +163,7 @@
     <Compile Include="Controllers\ActivityController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="CustonHttpHandler\AntiStealLinkHandler.cs" />
     <Compile Include="CustonHttpHandler\JhtmlHandler.cs" />
     <Compile Include="Filters\ActionFilterAttribute.cs" />
@@ -172,6 +173,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Extend.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -427,6 +429,7 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Article\Picture.cshtml" />
     <Content Include="Views\Article\Question.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
