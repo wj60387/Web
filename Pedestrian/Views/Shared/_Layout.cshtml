@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.ApplicationBlocks.Data;
+@using System.Data;
+<!DOCTYPE html>
 <html>
 <head>
     <title>10.1.43.56 山友集中营</title>
@@ -52,9 +54,7 @@
     <script src="/js/unslider/unslider.min.js"></script>
 </head>
 <body class="fontYaHei">
-    @{
-        File.AppendAllText("D:\\wanjian.txt", "wanjian");
-    }
+    
         <div id="wx-feedback"></div>
         <div style="background-color: #f7f7f7;">
             <div class="container">
@@ -140,30 +140,31 @@
                             </h6>
                             <div id="db-nav-location-list" class="dropdown-menu nav-local-list" style=" top: 45px; left: 0px;font-size: 14px;"
                                  role="menu" aria-labelledby="dLabel">
-                                <h5>珠三角地区</h5>
-                                <ul>
-                                    <li><a href="#" onclick="javascript:changeCity('401','广州');">广州</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('402','深圳');">深圳</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('405','佛山');">佛山</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('404','东莞');">东莞</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('420','珠海');">珠海</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('422','中山');">中山</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('425','台山');">台山</a></li>
-                                </ul>
-                                <h5>西南/北地区</h5>
-                                <ul>
-                                    <li><a href="#" onclick="javascript:changeCity('901','成都');">成都</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('3301','重庆');">重庆</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('1202','丽江');">丽江</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('1203','昆明');">昆明</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('1701','西安');">西安</a></li>
-                                </ul>
-                                <h5>华中地区</h5>
-                                <ul>
-                                    <li><a href="#" onclick="javascript:changeCity('2201','武汉');">武汉</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('601','长沙');">长沙</a></li>
-                                    <li><a href="#" onclick="javascript:changeCity('701','南昌');">南昌</a></li>
-                                </ul>
+                                @{
+                                    { 
+                                        var conn = "Data Source=.;Initial Catalog=Tour;Persist Security Info=True;User ID=sa;Password=sql";
+                                        var dt = SqlHelper.ExecuteDataset(conn, CommandType.Text, "select ID,AreaName from Area");
+                                        foreach (DataRow dr in dt.Tables[0].Rows)
+                                        {
+                                            var id = dr["ID"] + "";
+                                            var areaName = dr["AreaName"] + "";
+                                            var strArea = @"<h5>{0}</h5>
+                                                            <ul>{1}</ul>";
+                                            var dt2 = SqlHelper.ExecuteDataset(conn, CommandType.Text, "select CityCode,CityName from City where AreaID=" + id);
+                                            string strCityModel = @"<li><a href='#' onclick='javascript:changeCity('{0}','{1}');'>{1}</a></li>";
+                                           string strCitys=string.Empty;
+                                            foreach (DataRow row in dt2.Tables[0].Rows)
+                                            {
+                                                var cityCode = row["CityCode"]+"";
+                                                var cityName = row["CityName"]+"";
+                                                strCitys += string.Format(strCityModel, cityCode, cityName);
+                                            }
+                                            @(new HtmlString(string.Format(strArea, areaName, strCitys)));
+                                        }
+                                    }
+                                }
+
+                                
                             </div>
                         </div>
                     </div>
@@ -183,35 +184,18 @@
             <div class="navbar-inner">
                 <div class="container" style="width: 950px;">
                     <ul class="nav">
-                        <li id="navHome">
-                            <a href="/Home/Index">首页</a>
-                        </li>
-                        <li id="navActivity">
-                            <a href="/Activity/Index">活动</a>
-                        </li>
-                        <li id="tjActivity">
-                            <a href="/Article/Index">
-                                游记分享
-                                @*<i class="ask_new_ico"></i>*@
-                            </a>
-                        </li>
-                        <li id="customtrip">
-                            <a href="/Article/Picture1">
-                                旅途美景
-                            </a>
-                        </li>
-                        <li id="cps" style="max-width:120px">
-                            <a href="http://cps.hzins.com/shimengren/">旅行保险</a>
-                        </li>
-                        <li id="navArticle" class="dropdown">
-                            <a href="/Article/Question">
-                                常见问答
-                                <i class=" icon-chevron-down icon-white" style="margin-left: 10px;margin-top: 2px;"></i>
-                            </a>
-                        </li>
-
-                       
-
+                        @{
+                            {var conn = "Data Source=.;Initial Catalog=Tour;Persist Security Info=True;User ID=sa;Password=sql";
+                            var dt = SqlHelper.ExecuteDataset(conn,CommandType.Text, "select * from NavMenu");
+                            foreach (DataRow dr in dt.Tables[0].Rows)
+                            {
+                                var id = dr[1]+"";
+                                var name = dr[2]+"";
+                                 var href= dr[3]+"";
+                                 var str = "<li id=\"" + id + "\">" + "<a href=\"" + href + "\">" + name + "</a></li>)\r\n";
+                                @(new HtmlString( str));
+                            }}
+                        }
                     </ul>
                 </div>
             </div>
